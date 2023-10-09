@@ -13,6 +13,14 @@ return new class extends Migration
     {
         Schema::create('question_banks', function (Blueprint $table) {
             $table->id();
+            $table->string('title');
+            $table->string('option1');
+            $table->string('option2');
+            $table->string('option3');
+            $table->string('option4');
+            $table->integer('correct_answer');
+            $table->unsignedBigInteger('subject_id');
+            $table->unsignedBigInteger('level_id');
             $table->timestamps();
         });
     }

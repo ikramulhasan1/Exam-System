@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Level;
 use App\Models\QuestionBank;
+use App\Models\Subject;
+use Exception;
 use Illuminate\Http\Request;
 
 class QuestionBankController extends Controller
@@ -12,7 +15,8 @@ class QuestionBankController extends Controller
      */
     public function index()
     {
-        //
+        $questions = QuestionBank::all();
+        return view('backend.questionbanks.index', compact('questions'));
     }
 
     /**
@@ -20,7 +24,10 @@ class QuestionBankController extends Controller
      */
     public function create()
     {
-        //
+        $subjects = Subject::all();
+        $levels = Level::all();
+
+        return view('backend.questionbanks.create', compact('subjects', 'levels'));
     }
 
     /**
@@ -28,7 +35,13 @@ class QuestionBankController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        try {
+            $data = $request->all();
+            QuestionBank::create($data);
+            return redirect()->route('questionbanks.index');
+        } catch (Exception $e) {
+            return $e->getMessage();
+        }
     }
 
     /**

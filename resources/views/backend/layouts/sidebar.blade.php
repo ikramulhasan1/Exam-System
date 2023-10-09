@@ -76,7 +76,7 @@
                         </li>
 
                         <li class="nav-item"><a href="{{ route('subjects.create') }}" class="nav-link">Subject
-                                create</a> 
+                                create</a>
                         </li>
 
                     </ul>
@@ -88,6 +88,20 @@
                         </li>
 
                         <li class="nav-item"><a href="{{ route('levels.create') }}" class="nav-link">Level create</a>
+                        </li>
+
+                    </ul>
+                </li>
+                <li class="nav-item nav-item-submenu">
+                    <a href="#" class="nav-link"><i class="icon-pencil3"></i> <span>QuestionBank
+                            Details</span></a>
+                    <ul class="nav nav-group-sub" data-submenu-title="Form components">
+                        <li class="nav-item"><a href="{{ route('questionbanks.index') }}" class="nav-link">Question
+                                list</a>
+                        </li>
+
+                        <li class="nav-item"><a href="{{ route('questionbanks.create') }}" class="nav-link">Question
+                                create</a>
                         </li>
 
                     </ul>
