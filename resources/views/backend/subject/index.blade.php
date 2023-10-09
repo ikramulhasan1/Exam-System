@@ -2,6 +2,11 @@
 
 @section('content')
     <div class="container my-5">
+        @if (session()->has('success'))
+            <div class="alert alert-success">
+                {{ session()->get('success') }}
+            </div>
+        @endif
         <div class="card">
             <div class="card-header d-flex justify-content-between align-items-end">
                 <div class="card-title">Subjects</div>

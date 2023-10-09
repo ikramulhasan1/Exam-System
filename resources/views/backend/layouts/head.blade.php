@@ -38,9 +38,15 @@
 <script src="{{ asset('ui/backend/global_assets') }}/js/demo_charts/pages/dashboard/light/heatmaps.js"></script>
 <script src="{{ asset('ui/backend/global_assets') }}/js/demo_charts/pages/dashboard/light/pies.js"></script>
 <script src="{{ asset('ui/backend/global_assets') }}/js/demo_charts/pages/dashboard/light/bullets.js"></script>
+
+
+{{-- Custom js files --}}
+<script src="{{ asset('ui/backend') }}/assets/js/custom.js"></script>
 <!-- /theme JS files -->
 
-{{-- Bootstrap --}}
+<!-- Include jQuery -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
 
 {{-- Bootstrap icon cdn --}}
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
