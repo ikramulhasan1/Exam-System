@@ -167,7 +167,7 @@
                 var formData = new FormData(this);
 
                 $.ajax({
-                    url: '{{ route('subjects.store') }}',
+                    url: '{{ route('questionbanks.store') }}',
                     type: 'POST',
                     data: formData,
                     cache: false,

@@ -17,7 +17,7 @@
                     <thead>
                         <tr>
                             <th scope="col">Sel No.</th>
-                            <th scope="col">Subject</th>
+
                             <th scope="col">Title</th>
                             <th scope="col">Option1</th>
                             <th scope="col">Option2</th>
@@ -39,7 +39,6 @@
                                 <td>{{ $question->option4 ?? '' }}</td>
                                 <td>{{ $question->level_id ?? '' }}</td>
 
-                                <td>@mdo</td>
                                 <td class="d-flex">
                                     <a href="{{ route('subjects.edit', $question->id) }}"
                                         class="btn btn-primary btn-sm mx-1 font-size-lg "><i

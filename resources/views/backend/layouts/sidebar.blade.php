@@ -70,38 +70,37 @@
                         title="Forms"></i>
                 </li>
                 <li class="nav-item nav-item-submenu">
-                    <a href="#" class="nav-link"><i class="icon-pencil3"></i> <span>Subject Details</span></a>
+                    <a href="#" class="nav-link"><i class="icon-pencil3"></i> <span>Subject</span></a>
                     <ul class="nav nav-group-sub" data-submenu-title="Form components">
-                        <li class="nav-item"><a href="{{ route('subjects.index') }}" class="nav-link">Subject list</a>
+                        <li class="nav-item"><a href="{{ route('subjects.index') }}" class="nav-link">List</a>
                         </li>
 
-                        <li class="nav-item"><a href="{{ route('subjects.create') }}" class="nav-link">Subject
-                                create</a>
+                        <li class="nav-item"><a href="{{ route('subjects.create') }}" class="nav-link">Create</a>
                         </li>
 
                     </ul>
                 </li>
                 <li class="nav-item nav-item-submenu">
-                    <a href="#" class="nav-link"><i class="icon-pencil3"></i> <span>Level Details</span></a>
+                    <a href="#" class="nav-link"><i class="icon-pencil3"></i> <span>Level</span></a>
                     <ul class="nav nav-group-sub" data-submenu-title="Form components">
-                        <li class="nav-item"><a href="{{ route('levels.index') }}" class="nav-link">Level list</a>
+                        <li class="nav-item"><a href="{{ route('levels.index') }}" class="nav-link">List</a>
                         </li>
 
-                        <li class="nav-item"><a href="{{ route('levels.create') }}" class="nav-link">Level create</a>
+                        <li class="nav-item"><a href="{{ route('levels.create') }}" class="nav-link">Create</a>
                         </li>
 
                     </ul>
                 </li>
                 <li class="nav-item nav-item-submenu">
                     <a href="#" class="nav-link"><i class="icon-pencil3"></i> <span>QuestionBank
-                            Details</span></a>
+                        </span></a>
                     <ul class="nav nav-group-sub" data-submenu-title="Form components">
-                        <li class="nav-item"><a href="{{ route('questionbanks.index') }}" class="nav-link">Question
-                                list</a>
+                        <li class="nav-item"><a href="{{ route('questionbanks.index') }}" class="nav-link">
+                                List</a>
                         </li>
 
-                        <li class="nav-item"><a href="{{ route('questionbanks.create') }}" class="nav-link">Question
-                                create</a>
+                        <li class="nav-item"><a href="{{ route('questionbanks.create') }}" class="nav-link">
+                                Create</a>
                         </li>
 
                     </ul>

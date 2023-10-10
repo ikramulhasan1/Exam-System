@@ -27,8 +27,8 @@
                         @foreach ($subjects as $key => $subject)
                             <tr>
                                 <th scope="row">{{ $key + 1 }}</th>
-                                <td>{{ $subject->name }}</td>
-                                <td>{{ $subject->image }}</td>
+                                <td>{{ $subject->name ?? '' }}</td>
+                                <td>{{ $subject->image ?? '' }}</td>
                                 <td>@mdo</td>
                                 <td class="d-flex">
                                     <a href="{{ route('subjects.edit', $subject->id) }}"
