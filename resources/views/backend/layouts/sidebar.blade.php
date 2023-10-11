@@ -28,7 +28,7 @@
                     </div>
 
                     <div class="media-body">
-                        <div class="media-title font-weight-semibold">{{ Auth::user()->name }}</div>
+                        <div class="media-title font-weight-semibold">{{ Auth::user()->name ?? '' }}</div>
                         <div class="font-size-xs opacity-50">
                             <i class="icon-pin font-size-sm"></i> &nbsp;Santa Ana, CA
                         </div>

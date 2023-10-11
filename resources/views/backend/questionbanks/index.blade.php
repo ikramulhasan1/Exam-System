@@ -10,7 +10,21 @@
         <div class="card">
             <div class="card-header d-flex justify-content-between align-items-end">
                 <div class="card-title">Question Bank</div>
-                <a href="{{ route('questionbanks.create') }}" class="btn btn-primary">Add Question</a>
+
+                <div class="d-flex ">
+                    <a href="{{ route('questionbanks.create') }}" class="btn btn-primary ">Add Question</a>
+                    <div class="dropdown mx-1">
+                        <button class="btn btn-warning dropdown-toggle" type="button" id="dropdownMenuButton"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Export
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            <a class="dropdown-item" href="#">PDF</a>
+                            <a class="dropdown-item" href="{{ route('questions.export') }}">EXCEL</a>
+                        </div>
+                    </div>
+                </div>
+
             </div>
             <div class="card-body">
                 <table class="table table-striped table-bordered">

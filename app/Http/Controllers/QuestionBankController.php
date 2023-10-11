@@ -2,11 +2,14 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Level;
-use App\Models\QuestionBank;
-use App\Models\Subject;
+use App\Exports\QuestionBankExport;
 use Exception;
+use App\Models\Level;
+use App\Models\Subject;
+use App\Models\QuestionBank;
 use Illuminate\Http\Request;
+use Maatwebsite\Excel\Facades\Excel;
+
 
 class QuestionBankController extends Controller
 {
@@ -74,5 +77,10 @@ class QuestionBankController extends Controller
     public function destroy(QuestionBank $questionBank)
     {
         //
+    }
+
+    public function export() 
+    {
+        return Excel::download(new QuestionBankExport, 'QuestionBank.xlsx');
     }
 }

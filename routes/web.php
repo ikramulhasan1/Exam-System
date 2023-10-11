@@ -28,4 +28,10 @@ Route::resources([
     'questionbanks' => QuestionBankController::class
 ]);
 
+Route::get('questions/export/', [QuestionBankController::class, 'export'])->name('questions.export');
+
+
+// Report
+
+
 require __DIR__ . '/auth.php';

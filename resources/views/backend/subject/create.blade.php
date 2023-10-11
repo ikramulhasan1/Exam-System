@@ -1,63 +1,51 @@
 @extends('backend.master')
 
 @section('content')
-    <div class="container  my-5">
-        <div class="container" id="subBody">
+    <div class="container my-5">
+        <div class="" id="subBody">
             <div id="successMessage" style="display: none" class="alert alert-success mt-3">
                 Data stored successfully!
             </div>
+
             <div class="card">
-                <div class="card-header d-flex justify-content-between align-items-end">
-                    <h4 class="card-title">Subject Details</h4>
-                    <a href="{{ route('subjects.index') }}" class="btn btn-primary">Subject</a>
-                </div>
                 <div class="card-body">
-
-
-                    <form action="{{ route('subjects.store') }}" method="POST" enctype="multipart/form-data"
-                        id="myForm">
-                        @csrf
-                        <div class="mb-3">
-                            <label class="form-label">Subject</label>
-                            <input type="text" name="name" class="form-control" placeholder="Enter the subject">
-
-                        </div>
-                        {{-- <div class="mb-3 d-flex flex-column">
-                            <label class="form-label">Level</label>
-
-                            <select class="form-select p-2 border ">
-                                <option selected>select menu</option>
-                                <option value="1">One</option>
-                                <option value="2">Two</option>
-                                <option value="3">Three</option>
-                            </select>
-
-                        </div> --}}
-                        {{-- <div class="mb-3 d-flex flex-column">
-                            <label class="form-label">Question</label>
-
-                            <input type="text" name="question" class="form-control" placeholder="Enter your question">
-
-                        </div>  --}}
-                        {{-- <div class="mb-3 row">
-                            <div class="d-flex col-lg-6 mb-3">
-                                <input type="text" name="option1" class="form-control" placeholder="Option-1">
-                            </div>
-                            <div class="d-flex col-lg-6 mb-3">
-                                <input type="text" name="option2" class="form-control" placeholder="Option-2">
-                            </div>
-                            <div class="d-flex col-lg-6 mb-3">
-                                <input type="text" name="option3" class="form-control" placeholder="Option-3">
-                            </div>
-                            <div class="d-flex col-lg-6 mb-3">
-                                <input type="text" name="option4" class="form-control" placeholder="Option-4">
-                            </div>
-                        </div> --}}
-
-                        <button type="submit" class="btn btn-primary">Submit</button>
-                    </form>
+                    <div class="d-flex justify-content-between align-items-center ">
+                        <h4 class="card-title m-0">Subject Details</h4>
+                        <a href="{{ route('subjects.index') }}" class="btn btn-primary">Subject</a>
+                    </div>
                 </div>
             </div>
+
+            <form action="{{ route('subjects.store') }}" method="POST" enctype="multipart/form-data" id="myForm">
+                @csrf
+                <div id="subBody">
+                    <div class="card" id="subBody">
+                        <div class="card-body">
+                            <div class="mb-3">
+                                <label class="form-label">Subject</label>
+                                <input type="text" name="name" class="form-control" placeholder="Enter the subject">
+
+                            </div>
+
+                            <div class="form-group row d-flex flex-column">
+                                <label class="col-form-label col-lg-2">Image</label>
+                                <div class="col">
+                                    <div class="custom-file">
+                                        <input type="file" name="image" class="custom-file-input" id="customFile">
+                                        <label class="custom-file-label" for="customFile">Choose file</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+            </form>
+
 
         </div>
         <button type="button" class="btn btn-warning my-2" id="newSubAdd">Sub Add</button>
@@ -73,30 +61,29 @@
             const newSub = document.createElement("div")
             newSub.classList.add("mt-3")
             newSub.innerHTML = `
-        <div id="successMessage" style="display: none" class="alert alert-success mt-3">
-            Data stored successfully!
-        </div>
-        <div class="card">
-            <div class="card-header d-flex justify-content-between align-items-end">
-                <h4 class="card-title">Subject Details</h4>
-                <a href="{{ route('subjects.index') }}" class="btn btn-primary">Subject</a>
-            </div>
-            <div class="card-body">
+            <form action="{{ route('subjects.store') }}" method="POST" enctype="multipart/form-data" id="myForm">
+                @csrf
+                <div class="card">
+                    <div class="card-body">
+                        <div class="mb-3">
+                            <label class="form-label">Subject</label>
+                            <input type="text" name="name" class="form-control" placeholder="Enter the subject">
 
+                        </div>
 
-                <form action="{{ route('subjects.store') }}" method="POST" enctype="multipart/form-data" id="myForm">
-                    @csrf
-                    <div class="mb-3">
-                        <label class="form-label">Subject</label>
-                        <input type="text" name="name" class="form-control" placeholder="Enter the subject">
-
+                        <div class="form-group row d-flex flex-column">
+                            <label class="col-form-label col-lg-2">Image</label>
+                            <div class="col">
+                                <div class="custom-file">
+                                    <input type="file" name="image" class="custom-file-input" id="customFile">
+                                    <label class="custom-file-label" for="customFile">Choose file</label>
+                                </div>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Submit</button>
                     </div>
-                    
-                    <button type="submit" class="btn btn-primary">Submit</button>
-                </form>
-            </div>
-        </div>
-        
+                </div>
+            </form>
         `;
 
             parents.appendChild(newSub)

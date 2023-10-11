@@ -333,7 +333,7 @@
                     data-toggle="dropdown">
                     <img src="{{ asset('ui/backend/global_assets') }}/images/placeholders/placeholder.jpg"
                         class="rounded-circle mr-2" height="34" alt="">
-                    <span>{{ Auth::user()->name }}</span>
+                    <span>{{ Auth::user()->name ?? '' }}</span>
                 </a>
 
                 <div class="dropdown-menu dropdown-menu-right">
@@ -345,8 +345,13 @@
                     <div class="dropdown-divider"></div>
                     <a href="{{ route('profile.edit') }}" class="dropdown-item"><i class="icon-cog5"></i> Account
                         settings</a>
-                    <a href="{{ route('logout') }}" class="dropdown-item"><i class="icon-switch2"></i>
-                        Logout</a>
+
+                    <div class="dropdown-item"><i class="icon-switch2"></i>
+                        <form action="{{ route('logout') }}" method="POST">
+                            @csrf
+                            <button class="btn btn-light border-0 bg-transparent " type="submit">Logout</button>
+                        </form>
+                    </div>
                 </div>
             </li>
         </ul>
