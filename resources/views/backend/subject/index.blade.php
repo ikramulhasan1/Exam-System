@@ -19,7 +19,7 @@
                             <th scope="col">Sel No.</th>
                             <th scope="col">Subject</th>
                             <th scope="col">Image</th>
-                            <th scope="col">Level</th>
+
                             <th scope="col">Action</th>
                         </tr>
                     </thead>
@@ -29,7 +29,7 @@
                                 <th scope="row">{{ $key + 1 }}</th>
                                 <td>{{ $subject->name ?? '' }}</td>
                                 <td>{{ $subject->image ?? '' }}</td>
-                                <td>@mdo</td>
+
                                 <td class="d-flex">
                                     <a href="{{ route('subjects.edit', $subject->id) }}"
                                         class="btn btn-primary btn-sm mx-1 font-size-lg "><i

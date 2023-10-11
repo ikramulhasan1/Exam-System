@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\ExamController;
+use App\Http\Controllers\FrontendController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LevelController;
 use App\Http\Controllers\ProfileController;
@@ -7,9 +9,7 @@ use App\Http\Controllers\QuestionBankController;
 use App\Http\Controllers\SubjectController;
 
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::resource('/', FrontendController::class);
 
 Route::get('/dashboard', function () {
     return view('backend.dashboard');
@@ -25,7 +25,8 @@ Route::middleware('auth')->group(function () {
 Route::resources([
     'subjects' => SubjectController::class,
     'levels' => LevelController::class,
-    'questionbanks' => QuestionBankController::class
+    'questionbanks' => QuestionBankController::class,
+    'exams' => ExamController::class
 ]);
 
 Route::get('questions/export/', [QuestionBankController::class, 'export'])->name('questions.export');

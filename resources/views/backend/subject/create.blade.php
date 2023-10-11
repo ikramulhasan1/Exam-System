@@ -18,31 +18,28 @@
 
             <form action="{{ route('subjects.store') }}" method="POST" enctype="multipart/form-data" id="myForm">
                 @csrf
-                <div id="subBody">
-                    <div class="card" id="subBody">
-                        <div class="card-body">
-                            <div class="mb-3">
-                                <label class="form-label">Subject</label>
-                                <input type="text" name="name" class="form-control" placeholder="Enter the subject">
 
-                            </div>
+                <div class="card" id="subBody">
+                    <div class="card-body">
+                        <div class="mb-3">
+                            <label class="form-label">Subject</label>
+                            <input type="text" name="name[]" value="" class="form-control"
+                                placeholder="Enter the subject">
 
-                            <div class="form-group row d-flex flex-column">
-                                <label class="col-form-label col-lg-2">Image</label>
-                                <div class="col">
-                                    <div class="custom-file">
-                                        <input type="file" name="image" class="custom-file-input" id="customFile">
-                                        <label class="custom-file-label" for="customFile">Choose file</label>
-                                    </div>
+                        </div>
+
+                        <div class="form-group row d-flex flex-column">
+                            <label class="col-form-label col-lg-2">Image</label>
+                            <div class="col">
+                                <div class="custom-file">
+                                    <input type="file" name="image" class="custom-file-input" id="customFile">
+                                    <label class="custom-file-label" for="customFile">Choose file</label>
                                 </div>
                             </div>
-                            <button type="submit" class="btn btn-primary">Submit</button>
                         </div>
+                        <button type="submit" class="btn btn-primary">Submit</button>
                     </div>
                 </div>
-
-
-
 
             </form>
 
@@ -67,7 +64,7 @@
                     <div class="card-body">
                         <div class="mb-3">
                             <label class="form-label">Subject</label>
-                            <input type="text" name="name" class="form-control" placeholder="Enter the subject">
+                            <input type="text" name="name[]" value="" class="form-control" placeholder="Enter the subject">
 
                         </div>
 

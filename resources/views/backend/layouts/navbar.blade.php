@@ -1,7 +1,7 @@
 <div class="navbar navbar-expand-md navbar-dark">
     <div class="navbar-brand">
-        <a href="index.html" class="d-inline-block">
-            <img src="{{ asset('ui/backend/global_assets') }}/images/logo_light.png" alt="">
+        <a href="#" class="d-inline-block text-white">
+            <h3 class="m-0">EXAM System</h3>
         </a>
     </div>
 

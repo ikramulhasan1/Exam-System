@@ -29,7 +29,17 @@ class SubjectController extends Controller
      */
     public function store(Request $request)
     {
-        Subject::create($request->all());
+
+        $name = $request->input('name');
+
+        // Process the data as needed
+        foreach ($name as $index => $value) {
+            // Save to the database or process as necessary
+            Subject::create(['name' => $value]);
+        }
+
+
+        // Subject::create($request->all());
         return redirect()->route('subjects.index')->withSuccess('Subject added successfully');
 
     }
