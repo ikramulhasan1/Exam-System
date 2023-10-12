@@ -9,10 +9,10 @@
         @endif
         <div class="card">
             <div class="card-header d-flex justify-content-between align-items-end">
-                <div class="card-title">Question Bank</div>
+                <div class="card-title">Exam</div>
 
                 <div class="d-flex ">
-                    <a href="{{ route('questionbanks.create') }}" class="btn btn-primary ">Add Question</a>
+                    <a href="{{ route('exams.create') }}" class="btn btn-primary ">Exam setup</a>
                     <div class="dropdown mx-1">
                         <button class="btn btn-warning dropdown-toggle" type="button" id="dropdownMenuButton"
                             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -20,7 +20,7 @@
                         </button>
                         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                             <a class="dropdown-item" href="#">PDF</a>
-                            <a class="dropdown-item" href="{{ route('questions.export') }}">EXCEL</a>
+
                         </div>
                     </div>
                 </div>
@@ -31,42 +31,34 @@
                     <thead>
                         <tr>
                             <th scope="col">Sel No.</th>
-
-                            <th scope="col">Title</th>
-                            <th scope="col">Option1</th>
-                            <th scope="col">Option2</th>
-                            <th scope="col">Option3</th>
-                            <th scope="col">Option4</th>
-                            <th scope="col">Level</th>
+                            <th scope="col">Name</th>
+                            <th scope="col">Subject</th>
+                            <th scope="col">Status</th>
 
                             <th scope="col">Action</th>
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach ($questions as $key => $question)
+                        @foreach ($exams as $key => $exam)
                             <tr>
                                 <th scope="row">{{ $key + 1 }}</th>
-                                <td>{{ $question->title }}</td>
-                                <td>{{ $question->option1 ?? '' }}</td>
-                                <td>{{ $question->option2 ?? '' }}</td>
-                                <td>{{ $question->option3 ?? '' }}</td>
-                                <td>{{ $question->option4 ?? '' }}</td>
-                                <td>{{ $question->level_id ?? '' }}</td>
+                                <td>{{ $exam->name ?? '' }}</td>
+                                <td>{{ $exam->subject_id ?? '' }}</td>
+                                <td>{{ $exam->is_active == 0 ? 'Inactive' : 'Active' }}</td>
+
 
                                 <td class="d-flex">
-                                    <a href="{{ route('subjects.edit', $question->id) }}"
+                                    <a href="{{ route('exams.edit', $exam->id) }}"
                                         class="btn btn-primary btn-sm mx-1 font-size-lg "><i
                                             class="bi bi-pencil-square"></i></a>
 
-                                    <form action="{{ route('questionbanks.destroy', $question->id) }}" method="POST">
+                                    <form action="{{ route('exams.destroy', $exam->id) }}" method="POST">
 
                                         @csrf
                                         @method('DELETE')
-                                        <button type="submit" class="btn btn-danger btn-sm font-size-lg  "><i
+                                        <button type="submit" class="btn btn-danger btn-sm font-size-lg "><i
                                                 class="bi bi-trash-fill"></i></button>
                                     </form>
-
-
                                 </td>
                             </tr>
                         @endforeach

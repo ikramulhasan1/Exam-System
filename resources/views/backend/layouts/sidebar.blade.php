@@ -106,6 +106,21 @@
                     </ul>
                 </li>
 
+                <li class="nav-item nav-item-submenu">
+                    <a href="#" class="nav-link"><i class="icon-pencil3"></i> <span>Exams
+                        </span></a>
+                    <ul class="nav nav-group-sub" data-submenu-title="Form components">
+                        <li class="nav-item"><a href="{{ route('exams.index') }}" class="nav-link">
+                                List</a>
+                        </li>
+
+                        <li class="nav-item"><a href="{{ route('exams.create') }}" class="nav-link">
+                                Create</a>
+                        </li>
+
+                    </ul>
+                </li>
+
 
 
                 <!-- /forms -->

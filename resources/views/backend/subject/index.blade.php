@@ -10,7 +10,7 @@
         <div class="card">
             <div class="card-header d-flex justify-content-between align-items-end">
                 <div class="card-title">Subjects</div>
-                <a href="{{ route('subjects.create') }}" class="btn btn-primary">Add Subject</a>
+                <a href="{{ route('subjects.create') }}" class="btn btn-primary">Subject setup</a>
             </div>
             <div class="card-body">
                 <table class="table table-striped table-bordered">

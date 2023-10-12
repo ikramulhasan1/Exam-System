@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use Exception;
 use App\Models\Exam;
+use App\Models\Level;
+use App\Models\Subject;
 use Illuminate\Http\Request;
 
 class ExamController extends Controller
@@ -12,7 +15,8 @@ class ExamController extends Controller
      */
     public function index()
     {
-        
+        $exams = Exam::all();
+        return view('backend.exams.index', compact('exams'));
     }
 
     /**
@@ -20,15 +24,24 @@ class ExamController extends Controller
      */
     public function create()
     {
-        //
+        $subjects = Subject::all();
+        $levels = Level::all();
+
+        return view('backend.exams.create', compact('subjects', 'levels'));
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+   public function store(Request $request)
     {
-        //
+        try {
+            $data = $request->all();
+            Exam::create($data);
+            return redirect()->route('exams.index');
+        } catch (Exception $e) {
+            return $e->getMessage();
+        }
     }
 
     /**
@@ -60,6 +73,7 @@ class ExamController extends Controller
      */
     public function destroy(Exam $exam)
     {
-        //
+        $exam->delete();
+        return redirect()->route('exams.index')->withSuccess('Exam deleted successfully');
     }
 }

@@ -76,7 +76,8 @@ class QuestionBankController extends Controller
      */
     public function destroy(QuestionBank $questionBank)
     {
-        //
+        $questionBank->delete();
+        return redirect()->route('questionbanks.index')->withSuccess('Question deleted successfully');
     }
 
     public function export() 
