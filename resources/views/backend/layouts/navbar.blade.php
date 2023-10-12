@@ -1,6 +1,6 @@
 <div class="navbar navbar-expand-md navbar-dark">
     <div class="navbar-brand">
-        <a href="#" class="d-inline-block text-white">
+        <a href="{{ route('index') }}" class="d-inline-block text-white">
             <h3 class="m-0">EXAM System</h3>
         </a>
     </div>

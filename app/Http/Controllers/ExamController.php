@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Exception;
 use App\Models\Exam;
 use App\Models\Level;
+use App\Models\QuestionBank;
 use App\Models\Subject;
 use Illuminate\Http\Request;
 
@@ -36,9 +37,19 @@ class ExamController extends Controller
    public function store(Request $request)
     {
         try {
-            $data = $request->all();
-            Exam::create($data);
+  
+            // $data = $request->all();
+            // Exam::create($data);
+
+        // 
+            $question = QuestionBank::where('subject_id', $request->subject_id)
+                ->where('level_id', $request->level_id)
+                ->get();
+
+            dd($question);
             return redirect()->route('exams.index');
+
+
         } catch (Exception $e) {
             return $e->getMessage();
         }

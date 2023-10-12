@@ -20,7 +20,7 @@
                         <div class="mb-3 d-flex flex-column">
                             <label class="form-label">Subjects</label>
                             <select class="form-select p-2 border" name="subject_id">
-                                <option selected>--Select Subject--</option>
+                                <option selected>Select Subject</option>
                                 @forelse ($subjects as $subject)
                                     <option value="{{ $subject->id }}">{{ $subject->name ?? '' }}</option>
                                 @empty
@@ -32,7 +32,7 @@
                         <div class="mb-3 d-flex flex-column">
                             <label class="form-label">Level</label>
                             <select class="form-select p-2 border" name="level_id">
-                                <option selected>--Select Level--</option>
+                                <option selected>Select Level</option>
                                 @isset($levels)
                                     @forelse ($levels as $level)
                                         <option value="{{ $level->id }}">{{ $level->name ?? '' }}</option>
@@ -47,9 +47,15 @@
 
                         </div>
 
+                        <div class="mb-3">
+                            <label class="form-label">Exam Duration</label>
+                            <input type="number" name="duration" class="form-control" placeholder="Exam Duration">
+                        </div>
 
                         <div class="mb-3">
-                            <input type="number" name="duration" class="form-control" placeholder="Exam Duration">
+                            <label class="form-label">Total Questions</label>
+                            <input type="number" name="total_questions" class="form-control"
+                                placeholder="Total questions number">
                         </div>
                         <button type="submit" class="btn btn-primary">Submit</button>
                     </form>
