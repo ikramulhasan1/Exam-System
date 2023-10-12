@@ -9,8 +9,6 @@ use App\Http\Controllers\QuestionBankController;
 use App\Http\Controllers\SubjectController;
 
 
-Route::resource('/', FrontendController::class);
-
 Route::get('/dashboard', function () {
     return view('backend.dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
@@ -29,10 +27,14 @@ Route::resources([
     'exams' => ExamController::class
 ]);
 
+
+// Report
 Route::get('questions/export/', [QuestionBankController::class, 'export'])->name('questions.export');
 
 
-// Report
+// Frontends
+Route::resource('/', FrontendController::class);
+Route::get('examlist/{id}', [FrontendController::class, 'examList'])->name('examlist');
 
 
 require __DIR__ . '/auth.php';

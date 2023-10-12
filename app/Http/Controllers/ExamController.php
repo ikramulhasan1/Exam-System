@@ -6,6 +6,7 @@ use Exception;
 use App\Models\Exam;
 use App\Models\Level;
 use App\Models\QuestionBank;
+use App\Models\QuestionPaper;
 use App\Models\Subject;
 use Illuminate\Http\Request;
 
@@ -38,15 +39,32 @@ class ExamController extends Controller
     {
         try {
   
-            // $data = $request->all();
-            // Exam::create($data);
-
+            $data = $request->except('total_questions');
+            $exam = Exam::create($data);
         // 
-            $question = QuestionBank::where('subject_id', $request->subject_id)
-                ->where('level_id', $request->level_id)
-                ->get();
+            $questions = QuestionBank::where('subject_id', $request->subject_id)
+                                    ->where('level_id', $request->level_id)
+                                    ->inRandomOrder()
+                                    ->take($request->total_questions)
+                                    ->get();
 
-            dd($question);
+            if (count($questions) > 0) {
+               foreach ($questions as $key => $question) {
+                    QuestionPaper::create([
+                        'exam_id' => $exam->id,
+                        'question_id' => $question->id,
+                        'title' => $question->title,
+                        'option1' => $question->option1,
+                        'option2' => $question->option2,
+                        'option3' => $question->option3,
+                        'option4' => $question->option4,
+                        'correct_answer' => $question->correct_answer,
+                        'subject_id' => $request->subject_id,
+                        'level_id' => $request->level_id,
+                    ]);
+               }
+            }
+            // dd($questions);
             return redirect()->route('exams.index');
 
 

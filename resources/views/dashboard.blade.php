@@ -116,10 +116,14 @@
             <div class="row row-cols-1 row-cols-md-4 g-4">
                 @foreach ($subjects as $key => $subject)
                     <div class="col">
-                        <div class="card h-100 border my-3 d-flex justify-content-center">
-                            <h5 class="card-title mx-3 text-start ">{{ $key + 1 }}. {{ $subject->name ?? '' }}
-                            </h5>
-                        </div>
+                        <a href="{{ route('examlist', $subject->id) }}" class="text-decoration-none ">
+                            <div class="card h-100 border my-3 d-flex justify-content-center">
+                                <h5 class="card-title mx-3 text-start m-0">{{ $key + 1 }}.
+                                    {{ $subject->name ?? '' }}
+                                    <i class="fa-solid fa-circle-arrow-right mx-1 text-primary"></i>
+                                </h5>
+                            </div>
+                        </a>
                     </div>
                 @endforeach
             </div>
