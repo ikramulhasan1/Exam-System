@@ -97,13 +97,13 @@
     <main>
 
         {{-- Cover image section --}}
-        <section>
+        {{-- <section>
             <div class="cover-image mb-5"></div>
-        </section>
+        </section> --}}
 
-        <section class="container mb-5">
-            <div class="row g-4">
-                <div class="col">
+        <section class="container my-5">
+            <div class="row g-4 mt-5">
+                <div class="col mt-5">
                     <div class="card h-100 border bg-body-secondary rounded-0">
                         <div class="card-body">
                             <h5 class="card-title m-0 text-center ">Exam</h5>
@@ -114,7 +114,7 @@
 
             {{-- <div class="row row-cols-1 row-cols-md-4 g-4"> --}}
 
-            <div class="row g-4 my-1">
+            <div class="row g-4">
                 <div class="col">
                     <div class="card h-100 border rounded-0">
                         <div class="card-body pt-1">
@@ -131,7 +131,7 @@
                                     </div>
                                     <div class="col d-flex align-items-center">
                                         <h6 class="my-1">Time :</h6>
-                                        <h6 class="my-1 mx-1" id="timer"></h6>
+                                        <h6 class="my-1 mx-1 text-danger" id="timer"></h6>
                                     </div>
                                 </div>
 
@@ -242,11 +242,13 @@
         integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous">
     </script>
 
+
     <script>
         // Function to update the timer display
-        function updateTimer(minutes, seconds) {
+        function updateTimer(hours, minutes, seconds) {
             const timerDisplay = document.getElementById('timer');
-            timerDisplay.innerText = `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+            timerDisplay.innerText =
+                `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
         }
 
         // Function to start the timer
@@ -255,10 +257,11 @@
             const interval = 1000; // Update every second
 
             const timerInterval = setInterval(function() {
-                const minutes = Math.floor(timer / 60);
+                const hours = Math.floor(timer / 3600);
+                const minutes = Math.floor((timer % 3600) / 60);
                 const seconds = timer % 60;
 
-                updateTimer(minutes, seconds);
+                updateTimer(hours, minutes, seconds);
 
                 if (--timer < 0) {
                     clearInterval(timerInterval);
@@ -267,7 +270,7 @@
             }, interval);
         }
 
-        // Set the exam duration in seconds (10 minutes = 600 seconds)
+        // Set the exam duration in seconds (1 hour and 10 minutes = 70 minutes * 60 seconds)
         const examDuration = {{ $examTime }};
 
         // Start the timer when the page loads

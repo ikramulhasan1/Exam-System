@@ -36,8 +36,22 @@ class FrontendController extends Controller
 
     public function submitQuestionPaper(Request $request)
     {
-      
-        return redirect()->route('levels.index')->withSuccess('Level added successfully');
+        $submittedAnswers = $request->except('exam_id', '_token');
+        $examID = $request->exam_id;
+
+       foreach ($submittedAnswers as $qid => $value) {
+            $question = QuestionPaper::where('exam_id', $examID)
+                                        ->where('question_id', $qid)
+                                        ->first();
+        if ($question->correct_answer == $value) {
+            $submitAnswer = 'right';
+        }else{
+            $submitAnswer = 'wrong';
+        }
+       }
+
+
+        // return redirect()->route('levels.index')->withSuccess('Level added successfully');
     }
     
     

@@ -97,13 +97,13 @@
     <main>
 
         {{-- Cover image section --}}
-        <section>
+        {{-- <section>
             <div class="cover-image mb-5"></div>
-        </section>
+        </section> --}}
 
-        <section class="container mb-5">
-            <div class="row g-4">
-                <div class="col">
+        <section class="container my-5">
+            <div class="row g-4 mt-5">
+                <div class="col mt-5">
                     <div class="card h-100 border bg-body-secondary rounded-0">
                         <div class="card-body">
                             <h5 class="card-title m-0 text-center ">Exam List of {{ $subject->name }}</h5>
