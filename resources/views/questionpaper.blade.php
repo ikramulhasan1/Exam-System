@@ -146,7 +146,7 @@
                                             <div class="col-3 mx-3">
                                                 <div class="form-check">
                                                     <input class="form-check-input" type="radio"
-                                                        name="{{ $question->id }}" value="1"
+                                                        name="{{ $question->question_id }}" value="1"
                                                         id="flexRadioDefault1">
                                                     <label class="form-check-label" for="flexRadioDefault1">
                                                         {{ $question->option1 }}
@@ -154,7 +154,7 @@
                                                 </div>
                                                 <div class="form-check">
                                                     <input class="form-check-input" type="radio"
-                                                        name="{{ $question->id }}" value="2"
+                                                        name="{{ $question->question_id }}" value="2"
                                                         id="flexRadioDefault2">
                                                     <label class="form-check-label" for="flexRadioDefault2">
                                                         {{ $question->option2 }}
@@ -165,7 +165,7 @@
                                             <div class="col-3 mx-3">
                                                 <div class="form-check">
                                                     <input class="form-check-input" type="radio"
-                                                        name="{{ $question->id }}" value="3"
+                                                        name="{{ $question->question_id }}" value="3"
                                                         id="flexRadioDefault3">
                                                     <label class="form-check-label" for="flexRadioDefault3">
                                                         {{ $question->option3 }}
@@ -173,7 +173,7 @@
                                                 </div>
                                                 <div class="form-check">
                                                     <input class="form-check-input" type="radio"
-                                                        name="{{ $question->id }}" value="4"
+                                                        name="{{ $question->question_id }}" value="4"
                                                         id="flexRadioDefault4">
                                                     <label class="form-check-label" for="flexRadioDefault4">
                                                         {{ $question->option4 }}

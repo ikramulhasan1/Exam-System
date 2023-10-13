@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\AnswerScript;
 use App\Models\Exam;
 use App\Models\Subject;
 use Illuminate\Http\Request;
@@ -48,11 +49,24 @@ class FrontendController extends Controller
         }else{
             $submitAnswer = 'wrong';
         }
-       }
 
+        AnswerScript::create([
+            
+            'user_id' => auth()->user()->id,
+            'user_name' => auth()->user()->name,
+            'question_id' => $qid,
+            'title' => $question->title,
+            'option1' => $question->option1,
+            'option2' => $question->option2,
+            'option3' => $question->option3,
+            'option4' => $question->option4,
+            'correct_answer' => $question->correct_answer,
+            'submit_answer' => $submitAnswer,
+            'exam_id' => $examID,
+        ]);
+
+       }
 
         // return redirect()->route('levels.index')->withSuccess('Level added successfully');
     }
-    
-    
 }
