@@ -18,7 +18,7 @@ class QuestionBankController extends Controller
      */
     public function index()
     {
-        $questions = QuestionBank::all();
+        $questions = QuestionBank::paginate(5);
         return view('backend.questionbanks.index', compact('questions'));
     }
 
@@ -80,7 +80,7 @@ class QuestionBankController extends Controller
         return redirect()->route('questionbanks.index')->withSuccess('Question deleted successfully');
     }
 
-    public function export() 
+    public function export()
     {
         return Excel::download(new QuestionBankExport, 'QuestionBank.xlsx');
     }

@@ -16,7 +16,10 @@ class FrontendController extends Controller
         return view('dashboard', compact('subjects'));
     }
     public function examList($subjectID){
-        return view('subject-wise-exam');
+
+        $subject = Subject::findOrFail($subjectID);
+        // dd($subject->exams);
+        return view('subject-wise-exam', compact('subject'));
     }
     
     

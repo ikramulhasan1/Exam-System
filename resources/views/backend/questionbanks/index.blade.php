@@ -65,8 +65,6 @@
                                         <button type="submit" class="btn btn-danger btn-sm font-size-lg  "><i
                                                 class="bi bi-trash-fill"></i></button>
                                     </form>
-
-
                                 </td>
                             </tr>
                         @endforeach
@@ -74,5 +72,6 @@
                 </table>
             </div>
         </div>
+        {{ $questions->links('pagination::bootstrap-5') }}
     </div>
 @endsection

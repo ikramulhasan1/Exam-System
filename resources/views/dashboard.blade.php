@@ -56,7 +56,7 @@
                 <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar"
                     aria-labelledby="offcanvasNavbarLabel">
                     <div class="offcanvas-header">
-                        <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Offcanvas</h5>
+                        <h5 class="offcanvas-title" id="offcanvasNavbarLabel">EXAM System</h5>
                         <button type="button" class="btn-close" data-bs-dismiss="offcanvas"
                             aria-label="Close"></button>
                     </div>
@@ -67,7 +67,7 @@
                                     href="{{ route('index') }}">Home</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link  text-dark" href="#">Link</a>
+                                <a class="nav-link  text-dark" href="#">About</a>
                             </li>
                             <li class="nav-item dropdown  text-black">
                                 <a class="nav-link dropdown-toggle text-dark" href="#" role="button"
@@ -104,7 +104,7 @@
         <section class="container mb-5">
             <div class="row g-4">
                 <div class="col">
-                    <div class="card h-100 border ">
+                    <div class="card h-100 border bg-body-secondary">
                         <div class="card-body">
                             <h5 class="card-title m-0 text-center ">ALL SUBJECT</h5>
                         </div>
@@ -117,7 +117,7 @@
                 @foreach ($subjects as $key => $subject)
                     <div class="col">
                         <a href="{{ route('examlist', $subject->id) }}" class="text-decoration-none ">
-                            <div class="card h-100 border my-3 d-flex justify-content-center">
+                            <div class="card h-100 border my-3 d-flex justify-content-center bg-body-tertiary">
                                 <h5 class="card-title mx-3 text-start m-0">{{ $key + 1 }}.
                                     {{ $subject->name ?? '' }}
                                     <i class="fa-solid fa-circle-arrow-right mx-1 text-primary"></i>
