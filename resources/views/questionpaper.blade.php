@@ -106,41 +106,95 @@
                 <div class="col">
                     <div class="card h-100 border bg-body-secondary rounded-0">
                         <div class="card-body">
-                            <h5 class="card-title m-0 text-center ">Exam List of {{ $subject->name }}</h5>
+                            <h5 class="card-title m-0 text-center ">Exam</h5>
                         </div>
                     </div>
                 </div>
             </div>
 
             {{-- <div class="row row-cols-1 row-cols-md-4 g-4"> --}}
-            <table class="table table-striped table-bordered">
-                <thead>
-                    <tr>
-                        <th scope="col">Sel No.</th>
-                        <th scope="col">Name</th>
-                        <th scope="col">Status</th>
-                        <th scope="col">Action</th>
-                    </tr>
-                </thead>
-                <tbody>
 
-                    @forelse ($subject->exams as $key => $exam)
-                        <tr>
-                            <th scope="row">{{ $key + 1 }}</th>
-                            <td>{{ $exam->name ?? '' }}</td>
-                            <td>{{ $exam->is_active == 0 ? 'Inactive' : 'Active' }}</td>
+            <div class="row g-4 my-1">
+                <div class="col">
+                    <div class="card h-100 border rounded-0">
+                        <div class="card-body pt-1">
 
-                            <td class="d-flex">
-                                <a href="{{ route('question.paper', $exam->id) }}"
-                                    class="btn btn-primary btn-sm mx-1 font-size-lg rounded-0 "><i
-                                        class="bi bi-pencil-square"></i>START</a>
-                            </td>
-                        </tr>
-                    @empty
-                        <td colspan="4" class="text-center fw-bold text-danger">No Exam Found</td>
-                    @endforelse
-                </tbody>
-            </table>
+                            {{-- form --}}
+                            <form action="{{ route('submitted_question_paper') }}" method="post">
+                                @csrf
+
+                                <input type="hidden" value="{{ $exam->id }}" name="exam_id">
+
+                                <div class="row d-flex flex-column mb-4 py-2 bg-warning-subtle">
+                                    <div class="col">
+                                        <h6 class="my-1">SUBJECT : {{ $exam->subject->name }}</h6>
+                                    </div>
+                                    <div class="col d-flex align-items-center">
+                                        <h6 class="my-1">Time :</h6>
+                                        <h6 class="my-1 mx-1" id="timer"></h6>
+                                    </div>
+                                </div>
+
+
+
+                                {{-- @dd($question) --}}
+                                <div class="">
+                                    @forelse ($questions as $key => $question)
+                                        <h6 class="card-title mx-0">{{ $key + 1 }}. {{ $question->title }}</h6>
+                                        <div class="row">
+
+                                            <div class="col-3 mx-3">
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="radio"
+                                                        name="{{ $question->id }}" value="1"
+                                                        id="flexRadioDefault1">
+                                                    <label class="form-check-label" for="flexRadioDefault1">
+                                                        {{ $question->option1 }}
+                                                    </label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="radio"
+                                                        name="{{ $question->id }}" value="2"
+                                                        id="flexRadioDefault2">
+                                                    <label class="form-check-label" for="flexRadioDefault2">
+                                                        {{ $question->option2 }}
+                                                    </label>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-3 mx-3">
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="radio"
+                                                        name="{{ $question->id }}" value="3"
+                                                        id="flexRadioDefault3">
+                                                    <label class="form-check-label" for="flexRadioDefault3">
+                                                        {{ $question->option3 }}
+                                                    </label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="radio"
+                                                        name="{{ $question->id }}" value="4"
+                                                        id="flexRadioDefault4">
+                                                    <label class="form-check-label" for="flexRadioDefault4">
+                                                        {{ $question->option4 }}
+                                                    </label>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    @empty
+                                        <label class="form-check-label">
+                                            No Question
+                                        </label>
+                                    @endforelse
+                                </div>
+                                <button type="submit" class="btn btn-primary btn-sm my-4 rounded-0">Submit</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
             {{-- </div> --}}
         </section>
     </main>
@@ -183,8 +237,43 @@
         </div>
         <!-- Copyright -->
     </footer>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous">
+    </script>
+
+    <script>
+        // Function to update the timer display
+        function updateTimer(minutes, seconds) {
+            const timerDisplay = document.getElementById('timer');
+            timerDisplay.innerText = `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+        }
+
+        // Function to start the timer
+        function startTimer(duration) {
+            let timer = duration;
+            const interval = 1000; // Update every second
+
+            const timerInterval = setInterval(function() {
+                const minutes = Math.floor(timer / 60);
+                const seconds = timer % 60;
+
+                updateTimer(minutes, seconds);
+
+                if (--timer < 0) {
+                    clearInterval(timerInterval);
+                    alert('Time is up!');
+                }
+            }, interval);
+        }
+
+        // Set the exam duration in seconds (10 minutes = 600 seconds)
+        const examDuration = {{ $examTime }};
+
+        // Start the timer when the page loads
+        window.onload = function() {
+            startTimer(examDuration);
+        };
     </script>
 </body>
 
