@@ -34,13 +34,9 @@ The Laravel 10 Exam System is a web-based application designed to manage and con
 ## users continue here:
 
 -   Create a database locally named `examsystem`
--   Rename `.env.example` file to `.env`inside your project root and fill the database information.
-    (windows wont let you do it, so you have to open your console cd your project root directory and run `mv .env.example .env` )
+-   Rename `.env.example` file to `.env`inside your project root and fill the database information, or run `mv .env.example .env` 
 -   Open the console and cd your project root directory
--   Run
--   ```composer install```
--   or
--   ```composer update```
+-   Run `composer install` or `composer update`
 -   Run `php artisan key:generate`
 -   Run `php artisan migrate`
 -   Run `php artisan serve`
