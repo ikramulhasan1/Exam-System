@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\AnswerScript;
+use auth;
 use App\Models\Exam;
 use App\Models\Subject;
+use App\Models\AnswerScript;
 use Illuminate\Http\Request;
 use App\Models\QuestionPaper;
 

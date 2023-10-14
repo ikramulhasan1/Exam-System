@@ -22,7 +22,7 @@ return new class extends Migration
             $table->string('option3');
             $table->string('option4');
             $table->integer('correct_answer');
-            $table->integer('submit_answer');
+            $table->String('submit_answer');
             $table->unsignedBigInteger('exam_id');
             $table->timestamps();
         });
