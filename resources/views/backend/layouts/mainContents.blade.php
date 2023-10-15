@@ -83,27 +83,42 @@
 
                 <div class="col-lg-4">
 
-                    <!-- Today's revenue -->
+                    <!-- Current server load -->
                     <div class="card bg-blue-400">
                         <div class="card-body">
                             <div class="d-flex">
-                                <h3 class="font-weight-semibold mb-0">$18,390</h3>
+                                <h3 class="font-weight-semibold mb-0">49.4%</h3>
                                 <div class="list-icons ml-auto">
-                                    <a class="list-icons-item" data-action="reload"></a>
+                                    <div class="dropdown">
+                                        <a href="#" class="list-icons-item dropdown-toggle"
+                                            data-toggle="dropdown"><i class="icon-cog3"></i></a>
+                                        <div class="dropdown-menu dropdown-menu-right">
+                                            <a href="#" class="dropdown-item"><i class="icon-sync"></i>
+                                                Update data</a>
+                                            <a href="#" class="dropdown-item"><i class="icon-list-unordered"></i>
+                                                Detailed log</a>
+                                            <a href="#" class="dropdown-item"><i class="icon-pie5"></i>
+                                                Statistics</a>
+                                            <a href="#" class="dropdown-item"><i class="icon-cross3"></i>
+                                                Clear list</a>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
 
                             <div>
-                                Today's revenue
-                                <div class="font-size-sm opacity-75">$37,578 avg</div>
+                                Current server load
+                                <div class="font-size-sm opacity-75">34.6% avg</div>
                             </div>
                         </div>
 
 
                     </div>
-                    <!-- /today's revenue -->
+                    <!-- /current server load -->
 
                 </div>
+
+
             </div>
             <!-- /quick stats boxes -->
 

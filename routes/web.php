@@ -34,10 +34,10 @@ Route::get('questions/export/', [QuestionBankController::class, 'export'])->name
 
 // Frontends
 Route::resource('/', FrontendController::class);
-Route::get('examlist/{id}', [FrontendController::class, 'examList'])->name('examlist');
-Route::get('questionpaper/{id}', [FrontendController::class, 'questionPaper'])->name('question.paper');
+Route::get('examlist/{id}', [FrontendController::class, 'examList'])->middleware(['auth', 'verified'])->name('examlist');
+Route::get('questionpaper/{id}', [FrontendController::class, 'questionPaper'])->middleware(['auth', 'verified'])->name('question.paper');
 
-Route::post('submit-paper', [FrontendController::class, 'submitQuestionPaper'])->name('submitted_question_paper');
+Route::post('submit-paper', [FrontendController::class, 'submitQuestionPaper'])->middleware(['auth', 'verified'])->name('submitted_question_paper');
 
 
 require __DIR__ . '/auth.php';

@@ -70,7 +70,7 @@
                         title="Forms"></i>
                 </li>
                 <li class="nav-item nav-item-submenu">
-                    <a href="#" class="nav-link"><i class="icon-pencil3"></i> <span>Subject</span></a>
+                    <a href="#" class="nav-link"><i class="fa-solid fa-book fontSize"></i><span>Subject</span></a>
                     <ul class="nav nav-group-sub" data-submenu-title="Form components">
                         <li class="nav-item"><a href="{{ route('subjects.index') }}" class="nav-link">List</a>
                         </li>
@@ -81,7 +81,7 @@
                     </ul>
                 </li>
                 <li class="nav-item nav-item-submenu">
-                    <a href="#" class="nav-link"><i class="icon-pencil3"></i> <span>Level</span></a>
+                    <a href="#" class="nav-link"><i class="fa-solid fa-tags fontSize"></i> <span>Level</span></a>
                     <ul class="nav nav-group-sub" data-submenu-title="Form components">
                         <li class="nav-item"><a href="{{ route('levels.index') }}" class="nav-link">List</a>
                         </li>
@@ -92,7 +92,7 @@
                     </ul>
                 </li>
                 <li class="nav-item nav-item-submenu">
-                    <a href="#" class="nav-link"><i class="icon-pencil3"></i> <span>QuestionBank
+                    <a href="#" class="nav-link"><i class="fa-regular fa-folder fontSize"></i><span>QuestionBank
                         </span></a>
                     <ul class="nav nav-group-sub" data-submenu-title="Form components">
                         <li class="nav-item"><a href="{{ route('questionbanks.index') }}" class="nav-link">
@@ -107,7 +107,7 @@
                 </li>
 
                 <li class="nav-item nav-item-submenu">
-                    <a href="#" class="nav-link"><i class="icon-pencil3"></i> <span>Exams
+                    <a href="#" class="nav-link"><i class="fa-solid fa-file-lines fontSize"></i> <span>Exams
                         </span></a>
                     <ul class="nav nav-group-sub" data-submenu-title="Form components">
                         <li class="nav-item"><a href="{{ route('exams.index') }}" class="nav-link">
@@ -119,6 +119,15 @@
                         </li>
 
                     </ul>
+                </li>
+
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
+                        <i class="fa-solid fa-gear fontSize"></i>
+                        <span>
+                            Settings
+                        </span>
+                    </a>
                 </li>
 
 
