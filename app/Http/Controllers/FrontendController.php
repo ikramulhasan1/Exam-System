@@ -61,10 +61,20 @@ class FrontendController extends Controller
             'option2' => $question->option2,
             'option3' => $question->option3,
             'option4' => $question->option4,
-            'correct_answer' => $question->correct_answer,
+            'correct_answer' => $question->correct_answer ?? '',
             'submit_answer' => $submitAnswer,
             'exam_id' => $examID,
         ]);
+
+        // save
+            $rightAnswers = '';
+            $wrongAnswers = '';
+
+            $answerScripts = AnswerScript::where('user_id',auth()->user()->id)
+                                            ->where('exam_id', $examID)
+                                            ->get();
+
+
 
        }
 
