@@ -112,65 +112,26 @@
         <div class="">
             <div class="row d-sm-flex justify-content-center">
                 <div class="row row-cols-2 row-cols-md-4 g-4">
-                    <div class="col-lg-3">
-                        <div class="card h-100">
+                    @foreach ($subjects as $key => $subject)
+                        <div class="col-lg-3">
+                            <a href="{{ route('examlist', $subject->id) }}" class="text-decoration-none ">
+                                <div class="card h-100">
 
-                            <div class="card-body text-center">
-                                <h5 class="card-title">Exam Name</h5>
+                                    <div class="card-body text-center">
+                                        <h5 class="card-title">
+                                            {{ $key + 1 }}. {{ $subject->name ?? '' }}</h5>
 
-                                <div class="d-grid gap-2 col-9 mx-auto mt-4">
-                                    <a href="/examList.html" class="exploreBtn ">Explore <i
-                                            class="fa-regular fa-circle-right"></i></a>
+                                        <div class="d-grid gap-2 col-9 mx-auto mt-4">
+                                            <span class="exploreBtn">Explore {{ $subject->name ?? '' }} <i
+                                                    class="fa-regular fa-circle-right"></i></span>
+                                        </div>
+                                    </div>
+
                                 </div>
-                            </div>
-
+                            </a>
                         </div>
-                    </div>
+                    @endforeach
 
-                    <div class="col-lg-3">
-                        <div class="card h-100">
-
-                            <div class="card-body text-center">
-                                <h5 class="card-title">Exam Name</h5>
-
-                                <div class="d-grid gap-2 col-9 mx-auto mt-4">
-                                    <a href="/examList.html" class="exploreBtn ">Explore <i
-                                            class="fa-regular fa-circle-right"></i></a>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-
-                    <div class="col-lg-3">
-                        <div class="card h-100">
-
-                            <div class="card-body text-center">
-                                <h5 class="card-title">Exam Name</h5>
-
-                                <div class="d-grid gap-2 col-9 mx-auto mt-4">
-                                    <a href="/examList.html" class="exploreBtn ">Explore <i
-                                            class="fa-regular fa-circle-right"></i></a>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-
-                    <div class="col-lg-3">
-                        <div class="card h-100">
-
-                            <div class="card-body text-center">
-                                <h5 class="card-title">Exam Name</h5>
-
-                                <div class="d-grid gap-2 col-9 mx-auto mt-4">
-                                    <a href="/examList.html" class="exploreBtn ">Explore <i
-                                            class="fa-regular fa-circle-right"></i></a>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
 
 
                 </div>

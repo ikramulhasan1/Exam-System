@@ -1,7 +1,7 @@
-<header class="mb-5 sticky-top bg-white">
+<header class=" sticky-top bg-white">
     <nav class="navbar navbar-expand-lg py-2 shadow-sm">
         <div class="container">
-            <a class="navbar-brand text-success fw-semibold fs-2" href="#cover">QuickTest</a>
+            <a class="navbar-brand text-success fw-semibold fs-2" href="{{ route('index') }}">QuickTest</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -31,8 +31,8 @@
 
                 </ul>
                 <div>
-                    <a href="#" class="btn">Login</a>
-                    <a href="#" class="btn">Register</a>
+                    <a href="{{ route('login') }}" class="btn">Login</a>
+                    <a href="{{ route('register') }}" class="btn">Register</a>
                 </div>
             </div>
         </div>

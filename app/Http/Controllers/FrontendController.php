@@ -6,6 +6,7 @@ use auth;
 use App\Models\Exam;
 use App\Models\Subject;
 use App\Models\AnswerScript;
+use App\Models\Level;
 use Illuminate\Http\Request;
 use App\Models\QuestionPaper;
 
@@ -23,7 +24,7 @@ class FrontendController extends Controller
 
         $subject = Subject::findOrFail($subjectID);
         // dd($subject->exams);
-        return view('subject-wise-exam', compact('subject'));
+        return view('frontend.examStart', compact('subject'));
     }
 
     public function questionPaper($examID){
@@ -32,8 +33,10 @@ class FrontendController extends Controller
         // $subject = Subject::findOrFail($exam->subject_id);
         $questions = QuestionPaper::where('exam_id', $examID)->get();
 
+        $level = Level::all();
+
         $examTime = $exam->duration * 60;
-        return view('questionpaper', compact('questions', 'exam', 'examTime'));
+        return view('frontend.questionpaper', compact('questions', 'exam', 'level', 'examTime'));
     }
 
     public function submitQuestionPaper(Request $request)
