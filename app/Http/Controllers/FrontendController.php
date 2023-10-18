@@ -17,7 +17,7 @@ class FrontendController extends Controller
     public function index()
     {
         $subjects = Subject::all();
-        return view('dashboard', compact('subjects'));
+        return view('frontend.dashboard', compact('subjects'));
     }
     public function examList($subjectID){
 
