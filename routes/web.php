@@ -14,6 +14,7 @@ Route::get('/dashboard', function () {
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
+    // Route::get('/profile', [ProfileController::class, 'index'])->name('profile');
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
@@ -38,6 +39,11 @@ Route::get('examlist/{id}', [FrontendController::class, 'examList'])->middleware
 Route::get('questionpaper/{id}', [FrontendController::class, 'questionPaper'])->middleware(['auth', 'verified'])->name('question.paper');
 
 Route::post('submit-paper', [FrontendController::class, 'submitQuestionPaper'])->middleware(['auth', 'verified'])->name('submitted_question_paper');
+
+
+Route::get('/setting', function () {
+    return view('backend.profile.profileSetting');
+})->middleware(['auth', 'verified'])->name('profile.setting');
 
 
 require __DIR__ . '/auth.php';

@@ -33,6 +33,10 @@ class FrontendController extends Controller
         // $subject = Subject::findOrFail($exam->subject_id);
         $questions = QuestionPaper::where('exam_id', $examID)->get();
 
+        // $level = Level::where('exam_id', $examID)->get();
+
+        // $level = Level::all();
+
         $examTime = $exam->duration * 60;
         return view('frontend.questionpaper', compact('questions', 'exam', 'examTime'));
     }
