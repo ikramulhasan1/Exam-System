@@ -75,7 +75,6 @@ class FrontendController extends Controller
                                             ->get();
 
 
-
        }
 
         // return redirect()->route('levels.index')->withSuccess('Level added successfully');

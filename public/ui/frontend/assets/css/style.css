@@ -1,0 +1,145 @@
+.grad {
+    background-image: linear-gradient(#FFFFFF, #F9F7F9) !important;
+}
+
+
+:root {
+    --navyBlue: #461E5C;
+    --navyBlueHover: #461D5C;
+    --buttonColor: #FFFFFF;
+
+    --normalFontSize: 20px !important;
+    --smallFont: 18px !important;
+
+    --color1: #ffa05c;
+    --color2: #E56B1F;
+}
+
+
+.btn {
+    background-color: var(--navyBlue) !important;
+    border-radius: 0px !important;
+    color: var(--buttonColor) !important;
+    border: none !important;
+    padding: 8px 15px !important;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.exploreBtn {
+    background-color: var(--navyBlue) !important;
+    border-radius: 3px !important;
+    color: var(--buttonColor) !important;
+    border: none !important;
+    padding: 5px 10px !important;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.navLink {
+    font-size: 16px !important;
+    color: var(--navyBlue) !important;
+    font-weight: 500 !important;
+}
+
+.pText {
+    font-size: var(--normalFontSize);
+    color: rgb(73, 73, 73);
+}
+
+.heading {
+    color: #461D5C;
+    font-size: 42px;
+    font-weight: 700;
+}
+
+/* FEATURES */
+.feature {
+    font-size: 18px !important;
+    font-weight: 600 !important;
+    color: var(--color1) !important;
+    margin: 80px 0px 0px 0px !important;
+}
+
+.subheading {
+    font-size: 22px;
+    font-weight: 400;
+    color: #6a6a6a;
+    margin: 16px 0px;
+}
+
+.smallheading {
+    font-size: 18px !important;
+    font-weight: 500 !important;
+    color: var(--navyBlue) !important;
+    margin: 0px !important;
+    margin-bottom: 10px !important;
+}
+
+.fss {
+    font-size: var(--smallFont);
+    color: #707280;
+}
+
+.sectionMargin {
+    margin-top: 120px !important;
+}
+
+
+.testimonialText {
+    font-size: var(--smallFont);
+}
+
+.testimonialAuthor {
+    font-size: 16px !important;
+}
+
+.navyBlueColor {
+    color: var(--navyBlue) !important;
+}
+
+.navyBlueBgColor {
+    background-color: var(--navyBlue) !important;
+}
+
+.featuresIcon {
+    font-size: 40px !important;
+    color: var(--navyBlue) !important;
+}
+
+
+
+.examListCover {
+    /* Location of the image */
+    background-image: url(/assets/img/Cover/background-photo.jpg);
+
+    /* Image is centered vertically and horizontally at all times */
+    background-position: center center;
+
+    /* Image doesn't repeat */
+    background-repeat: no-repeat;
+
+    /* Makes the image fixed in the viewport so that it doesn't move when 
+     the content height is greater than the image height */
+    background-attachment: fixed;
+
+    /* This is what makes the background image rescale based on its container's size */
+    background-size: cover;
+
+    /* Pick a solid background color that will be displayed while the background image is loading */
+    background-color: #464646;
+
+    /* SHORTHAND CSS NOTATION
+   * background: url(background-photo.jpg) center center cover no-repeat fixed;
+   */
+}
+
+/* For mobile devices */
+@media only screen and (max-width: 767px) {
+    .examListCover {
+        /* The file size of this background image is 93% smaller
+     * to improve page load speed on mobile internet connections */
+        background-image: url(/assets/img/Cover/background-photo-mobile-devices.jpg);
+    }
+}
+
