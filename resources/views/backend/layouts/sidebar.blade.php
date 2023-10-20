@@ -70,23 +70,24 @@
                         title="Forms"></i>
                 </li>
                 <li class="nav-item nav-item-submenu">
-                    <a href="#" class="nav-link"><i class="fa-solid fa-book fontSize"></i><span>Subject</span></a>
+                    <a href="#" class="nav-link"><i
+                            class="fa-solid fa-book fontSize"></i><span>Subjects</span></a>
                     <ul class="nav nav-group-sub" data-submenu-title="Form components">
-                        <li class="nav-item"><a href="{{ route('subjects.index') }}" class="nav-link">List</a>
+                        <li class="nav-item"><a href="{{ route('subjects.index') }}" class="nav-link">Subject</a>
                         </li>
 
-                        <li class="nav-item"><a href="{{ route('subjects.create') }}" class="nav-link">Create</a>
+                        <li class="nav-item"><a href="{{ route('subjects.create') }}" class="nav-link">Import</a>
                         </li>
 
                     </ul>
                 </li>
                 <li class="nav-item nav-item-submenu">
-                    <a href="#" class="nav-link"><i class="fa-solid fa-tags fontSize"></i> <span>Level</span></a>
+                    <a href="#" class="nav-link"><i class="fa-solid fa-tags fontSize"></i> <span>Levels</span></a>
                     <ul class="nav nav-group-sub" data-submenu-title="Form components">
-                        <li class="nav-item"><a href="{{ route('levels.index') }}" class="nav-link">List</a>
+                        <li class="nav-item"><a href="{{ route('levels.index') }}" class="nav-link">Level</a>
                         </li>
 
-                        <li class="nav-item"><a href="{{ route('levels.create') }}" class="nav-link">Create</a>
+                        <li class="nav-item"><a href="{{ route('levels.create') }}" class="nav-link">Import</a>
                         </li>
 
                     </ul>
@@ -96,11 +97,11 @@
                         </span></a>
                     <ul class="nav nav-group-sub" data-submenu-title="Form components">
                         <li class="nav-item"><a href="{{ route('questionbanks.index') }}" class="nav-link">
-                                List</a>
+                                Question</a>
                         </li>
 
                         <li class="nav-item"><a href="{{ route('questionbanks.create') }}" class="nav-link">
-                                Create</a>
+                                Import</a>
                         </li>
 
                     </ul>
@@ -111,14 +112,23 @@
                         </span></a>
                     <ul class="nav nav-group-sub" data-submenu-title="Form components">
                         <li class="nav-item"><a href="{{ route('exams.index') }}" class="nav-link">
-                                List</a>
+                                Exam</a>
                         </li>
 
                         <li class="nav-item"><a href="{{ route('exams.create') }}" class="nav-link">
-                                Create</a>
+                                Import</a>
                         </li>
 
                     </ul>
+                </li>
+
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
+                        <i class="fa-solid fa-user fontSize"></i>
+                        <span>
+                            User
+                        </span>
+                    </a>
                 </li>
 
                 <li class="nav-item">
@@ -127,6 +137,17 @@
                         <span>
                             Settings
                         </span>
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
+                        <i class="fa-solid fa-arrow-right-from-bracket fontSize"></i>
+                        <form action="{{ route('logout') }}" method="POST">
+                            @csrf
+                            <input class="text-white p-0 border-0 bg-transparent font-weight-bold " type="submit"
+                                value="Logout">
+                        </form>
                     </a>
                 </li>
 
