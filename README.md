@@ -1,7 +1,7 @@
 # Laravel 10 Exam System
 
-<div style="display: flex;>
-  <img src="./public/ui/Full-Project-Image/COVER.png" alt="QuickTest" width="75%">
+<div style="display: flex;">
+  <img src="./public/ui/Full-Project-Image/COVER.png" alt="QuickTest" width="70%">
   <img src="./public/ui/Full-Project-Image/mobile.png" alt="QuickTest" width="25%">
 </div>
 
