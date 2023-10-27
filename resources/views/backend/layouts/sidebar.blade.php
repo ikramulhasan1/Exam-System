@@ -132,7 +132,7 @@
                 </li>
 
                 <li class="nav-item">
-                    <a href="#" class="nav-link">
+                    <a href="{{ route('profile.setting') }}" class="nav-link">
                         <i class="fa-solid fa-gear fontSize"></i>
                         <span>
                             Settings

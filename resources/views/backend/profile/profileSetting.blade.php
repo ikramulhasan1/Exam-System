@@ -15,14 +15,14 @@
                 <div class="card">
                     <div class="card-body">
                         <nav class="nav flex-column nav-pills nav-gap-y-1">
-                            {{-- <a href="#profile" data-toggle="tab" class="nav-item nav-link has-icon nav-link-faded active">
+                            <a href="#profile" data-toggle="tab" class="nav-item nav-link has-icon nav-link-faded active">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
                                     fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                                     stroke-linejoin="round" class="feather feather-user mr-2">
                                     <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
                                     <circle cx="12" cy="7" r="4"></circle>
                                 </svg>Profile Information
-                            </a> --}}
+                            </a>
                             <a href="#account" data-toggle="tab" class="nav-item nav-link has-icon nav-link-faded">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
                                     fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
@@ -66,9 +66,9 @@
                         <ul class="nav nav-tabs card-header-tabs nav-gap-x-1" role="tablist">
                             <li class="nav-item">
                                 <a href="#profile" data-toggle="tab" class="nav-link has-icon active"><svg
-                                        xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                        stroke-linejoin="round" class="feather feather-user">
+                                        xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                        stroke-linecap="round" stroke-linejoin="round" class="feather feather-user">
                                         <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
                                         <circle cx="12" cy="7" r="4"></circle>
                                     </svg></a>
@@ -115,7 +115,7 @@
                         </ul>
                     </div>
                     <div class="card-body tab-content">
-                        {{-- <div class="tab-pane active" id="profile">
+                        <div class="tab-pane active" id="profile">
                             <h6 class="mt-2">YOUR PROFILE INFORMATION</h6>
                             <hr>
                             <form>
@@ -150,8 +150,8 @@
                                 <button type="button" class="btn btn-primary">Update Profile</button>
                                 <button type="reset" class="btn btn-light">Reset Changes</button>
                             </form>
-                        </div> --}}
-                        <div class="tab-pane active mt-2" id="account">
+                        </div>
+                        <div class="tab-pane mt-2" id="account">
                             <h6>ACCOUNT SETTINGS</h6>
                             <hr>
                             <form>
