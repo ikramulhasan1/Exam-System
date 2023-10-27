@@ -1,8 +1,9 @@
 # Laravel 10 Exam System
 
-<p align="center">
-  <img src="./public/ui/Full-Project-Image/COVER.png" alt="Your Name" width="600px">
-</p>
+<div style="display: flex;">
+  <img src="./public/ui/Full-Project-Image/COVER.png" alt="QuickTest" width="75%">
+  <img src="./public/ui/Full-Project-Image/mobile.png" alt="QuickTest" width="25%">
+</div>
 
 
 ### Project Overview:
