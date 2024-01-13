@@ -1,178 +1,455 @@
 @extends('frontend.master')
 
 @section('content')
-    <!-- Cover section -->
-    <section class="grad mt-lg-5" id="cover">
-        <div class="container pt-5">
-            <div class="row">
-                <div class="col-lg-5 d-flex align-items-start justify-content-center flex-column">
-                    <span class="">
-                        <h1 class="m-0 heading">Learn & Upgrade</h1>
-                        <h1 class="m-0 heading">Your Skills on Your</h1>
-                        <h1 class="m-0 heading">Schedule</h1>
-                    </span>
-                    <p class="my-4 pText">Anywhere, anytime. Everything You Need For Your Exam Preparation</p>
-                    <div class="mt-12 flex flex-wrap">
-                        <div class=" mt-4 sm:mt-0 md:mt-4 lg:mt-0">
-                            <a href="#" class="btn">
-                                Get Started
-                            </a>
+    <!--================ Start Home Banner Area =================-->
+    <section class="home_banner_area">
+        <div class="banner_inner">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="banner_content text-center">
+                            <p class="text-uppercase">
+                                Best online education service In the world
+                            </p>
+                            <h2 class="text-uppercase mt-4 mb-5">
+                                One Step Ahead This Season
+                            </h2>
+                            <div>
+                                <a href="#" class="primary-btn2 mb-3 mb-sm-0">learn more</a>
+                                <a href="courses.html" class="primary-btn ml-sm-3 ml-0">see course</a>
+                            </div>
                         </div>
                     </div>
-
-                </div>
-                <div class="col-lg-7 align-items-center">
-                    <img class="img-fluid" src="{{ asset('ui/frontend') }}/assets/img/cover.png" alt=""
-                        srcset="">
                 </div>
             </div>
         </div>
     </section>
+    <!--================ End Home Banner Area =================-->
 
-
-    <!-- FEATURES section -->
-    <section class="container sectionMargin" id="features">
-        <div class="text-center mb-4">
-            <p class="feature">FEATURES</p>
-            <h1 class="heading">Better Learning. Better Results.</h1>
-            <p class="subheading">One platform for all your learning needs</p>
-        </div>
-
-        <div class="">
-            <div class="row">
-                <div class="col-lg-6 d-flex align-items-start p-2">
-                    <div class="me-3">
-                        <span class="m">
-                            <i class="fa-regular fa-user featuresIcon"></i>
-                        </span>
-
-                    </div>
-                    <div class="">
-                        <h4 class="smallheading">User Authentication and Profiles:</h4>
-                        <p class="fss">Secure user authentication and personalized profiles for learners,
-                            educators, and administrators.</p>
-                    </div>
-                </div>
-                <div class="col-lg-6 d-flex align-items-start p-2">
-                    <div class="me-3">
-                        <span class="m">
-                            <i class="fa-regular fa-file-lines featuresIcon"></i>
-                        </span>
-                    </div>
-                    <div class="">
-                        <h4 class="smallheading">Online Exams and Assessments:</h4>
-                        <p class="fss">Conduct secure online exams, quizzes, and assessments with various
-                            question
-                            formats (multiple-choice, short answer,
-                            essays) and customizable grading parameters.
-                        </p>
-                    </div>
-                </div>
-                <div class="col-lg-6 d-flex align-items-start p-2">
-                    <div class="me-3">
-                        <span class="m">
-                            <i class="fa-solid fa-laptop-file featuresIcon"></i>
-                        </span>
-                    </div>
-                    <div class="">
-                        <h4 class="smallheading">Remote Proctoring and Anti-Cheating Measures:</h4>
-                        <p class="fss">Implement features like remote proctoring, webcam monitoring, and
-                            plagiarism detection to ensure exam integrity.</p>
-                    </div>
-                </div>
-                <div class="col-lg-6 d-flex align-items-start p-2">
-                    <div class="me-3">
-                        <span class="m">
-
-                            <i class="fa-solid fa-graduation-cap featuresIcon"></i>
-                        </span>
-                    </div>
-                    <div class="">
-                        <h4 class="smallheading">Automated Grading and Feedback:</h4>
-                        <p class="fss">Automatically grade exams and provide instant feedback to learners,
-                            saving
-                            time for educators and enhancing the
-                            learning process.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-
-    <!-- Exam section -->
-    <section class="container sectionMargin" id="explore">
-        <div class="text-center mb-4">
-            <p class="feature">EXAMS</p>
-            <h1 class="heading">Seamless and Secure Online Exam Experience</h1>
-            <p class="subheading m-0">Secure, Flexible, and Efficient Exam Management for Better Results</p>
-
-        </div>
-
-        <div class="">
-            <div class="row d-sm-flex justify-content-center">
-                <div class="row row-cols-2 row-cols-md-4 g-4">
-                    @foreach ($subjects as $key => $subject)
-                        <div class="col-lg-3">
-                            <a href="{{ route('examlist', $subject->id) }}" class="text-decoration-none ">
-                                <div class="card h-100">
-
-                                    <div class="card-body text-center">
-                                        <h5 class="card-title">
-                                            {{ $key + 1 }}. {{ $subject->name ?? '' }}</h5>
-
-                                        <div class="d-grid gap-2 col-9 mx-auto mt-4">
-                                            <span class="exploreBtn">Explore {{ $subject->name ?? '' }} <i
-                                                    class="fa-regular fa-circle-right"></i></span>
-                                        </div>
-                                    </div>
-
-                                </div>
-                            </a>
-                        </div>
-                    @endforeach
-
-
-
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- TESTIMONIALS section -->
-    <section class="container sectionMargin">
-        <div class="text-center mb-4">
-            <p class="feature">TESTIMONIALS</p>
-            <h1 class="heading">Our students and parents love us</h1>
-            <p class="subheading m-0">Hear it directly from our students</p>
-
-        </div>
-
+    <!--================ Start Feature Area =================-->
+    <section class="feature_area section_gap_top">
         <div class="container">
-            <div class="row g-3">
-                <div class="col-lg-6">
-                    <div class="card px-5 py-4 border-0 shadow-sm">
-                        <span><i class="fa-solid fa-quote-left fs-2 navyBlueColor"></i></span>
-                        <p class="text-start testimonialText">QuickTest made online exams a breeze. The security
-                            measures and intuitive interface provided a seamless experience for
-                            both educators and students. Highly recommended for efficient and reliable exam
-                            management!</p>
-                        <p class="text-start testimonialAuthor">- John Doe</p>
+            <div class="row justify-content-center">
+                <div class="col-lg-5">
+                    <div class="main_title">
+                        <h2 class="mb-3">Awesome Feature</h2>
+                        <!-- <p>
+                  Replenish man have thing gathering lights yielding shall you
+                </p> -->
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 col-md-6">
+                    <div class="single_feature">
+                        <div class="icon"><span class="flaticon-student"></span></div>
+                        <div class="desc">
+                            <h4 class="mt-3 mb-2">Scholarship Facility</h4>
+                            <p>
+                                One make creepeth, man bearing theira firmament won't great
+                                heaven
+                            </p>
+                        </div>
                     </div>
                 </div>
 
-                <div class="col-lg-6">
-                    <div class="card px-5 py-4 border-0 shadow-sm">
-                        <span><i class="fa-solid fa-quote-left fs-2 navyBlueColor"></i></span>
-                        <p class="text-start testimonialText">QuickTest exceeded our expectations. The randomized
-                            question bank and real-time tracking added a layer of fairness to
-                            our exams. The system's adaptability and ease of use have positively impacted our
-                            assessment strategies.</p>
-                        <p class="text-start testimonialAuthor">- Michael Johnson</p>
+                <div class="col-lg-4 col-md-6">
+                    <div class="single_feature">
+                        <div class="icon"><span class="flaticon-book"></span></div>
+                        <div class="desc">
+                            <h4 class="mt-3 mb-2">Sell Online Course</h4>
+                            <p>
+                                One make creepeth, man bearing theira firmament won't great
+                                heaven
+                            </p>
+                        </div>
                     </div>
                 </div>
 
+                <div class="col-lg-4 col-md-6">
+                    <div class="single_feature">
+                        <div class="icon"><span class="flaticon-earth"></span></div>
+                        <div class="desc">
+                            <h4 class="mt-3 mb-2">Global Certification</h4>
+                            <p>
+                                One make creepeth, man bearing theira firmament won't great
+                                heaven
+                            </p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
+    <!--================ End Feature Area =================-->
+
+    <!--================ Start Popular Courses Area =================-->
+    <div class="popular_courses">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-5">
+                    <div class="main_title">
+                        <h2 class="mb-3">Our Popular Courses</h2>
+                        <!-- <p>
+                  Replenish man have thing gathering lights yielding shall you
+                </p> -->
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <!-- single course -->
+                <div class="col-lg-12">
+                    <div class="owl-carousel active_course">
+                        <div class="single_course">
+                            <div class="course_head">
+                                <img class="img-fluid" src="{{ asset('ui/frontend/assets') }}/img/courses/c1.jpg"
+                                    alt="" />
+                            </div>
+                            <div class="course_content">
+
+                                <h4 class="mb-3">
+                                    <a href="course-details.html">Custom Product Design</a>
+                                </h4>
+                                <p>
+                                    One make creepeth man bearing their one firmament won't fowl
+                                    meat over sea
+                                </p>
+                                <!-- <div
+                      class="course_meta d-flex justify-content-lg-between align-items-lg-center flex-lg-row flex-column mt-4">
+                      <div class="authr_meta">
+                        <img src="img/courses/author1.png" alt="" />
+                        <span class="d-inline-block ml-2">Cameron</span>
+                      </div>
+                      <div class="mt-lg-0 mt-3">
+                        <span class="meta_info mr-4">
+                          <a href="#"> <i class="ti-user mr-2"></i>25 </a>
+                        </span>
+                        <span class="meta_info"><a href="#"> <i class="ti-heart mr-2"></i>35 </a></span>
+                      </div>
+                    </div> -->
+                            </div>
+                        </div>
+
+                        <div class="single_course">
+                            <div class="course_head">
+                                <img class="img-fluid" src="{{ asset('ui/frontend/assets') }}/img/courses/c2.jpg"
+                                    alt="" />
+                            </div>
+                            <div class="course_content">
+
+                                <h4 class="mb-3">
+                                    <a href="course-details.html">Social Media Network</a>
+                                </h4>
+                                <p>
+                                    One make creepeth man bearing their one firmament won't fowl
+                                    meat over sea
+                                </p>
+                                <!-- <div
+                      class="course_meta d-flex justify-content-lg-between align-items-lg-center flex-lg-row flex-column mt-4">
+                      <div class="authr_meta">
+                        <img src="img/courses/author2.png" alt="" />
+                        <span class="d-inline-block ml-2">Cameron</span>
+                      </div>
+                      <div class="mt-lg-0 mt-3">
+                        <span class="meta_info mr-4">
+                          <a href="#"> <i class="ti-user mr-2"></i>25 </a>
+                        </span>
+                        <span class="meta_info"><a href="#"> <i class="ti-heart mr-2"></i>35 </a></span>
+                      </div>
+                    </div> -->
+                            </div>
+                        </div>
+
+                        <div class="single_course">
+                            <div class="course_head">
+                                <img class="img-fluid" src="{{ asset('ui/frontend/assets') }}/img/courses/c3.jpg"
+                                    alt="" />
+                            </div>
+                            <div class="course_content">
+
+                                <h4 class="mb-3">
+                                    <a href="course-details.html">Computer Engineering</a>
+                                </h4>
+                                <p>
+                                    One make creepeth man bearing their one firmament won't fowl
+                                    meat over sea
+                                </p>
+                                <!-- <div
+                      class="course_meta d-flex justify-content-lg-between align-items-lg-center flex-lg-row flex-column mt-4">
+                      <div class="authr_meta">
+                        <img src="img/courses/author3.png" alt="" />
+                        <span class="d-inline-block ml-2">Cameron</span>
+                      </div>
+                      <div class="mt-lg-0 mt-3">
+                        <span class="meta_info mr-4">
+                          <a href="#"> <i class="ti-user mr-2"></i>25 </a>
+                        </span>
+                        <span class="meta_info"><a href="#"> <i class="ti-heart mr-2"></i>35 </a></span>
+                      </div>
+                    </div> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--================ End Popular Courses Area =================-->
+
+    <!--================ Start Registration Area =================-->
+    <div class="section_gap registration_area">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-7">
+                    <div class="row clock_sec clockdiv" id="clockdiv">
+                        <div class="col-lg-12">
+                            <h1 class="mb-3">Register Now</h1>
+                            <p>
+                                There is a moment in the life of any aspiring astronomer that
+                                it is time to buy that first telescope. It’s exciting to think
+                                about setting up your own viewing station.
+                            </p>
+                        </div>
+                        <div class="col clockinner1 clockinner">
+                            <h1 class="days">150</h1>
+                            <span class="smalltext">Days</span>
+                        </div>
+                        <div class="col clockinner clockinner1">
+                            <h1 class="hours">23</h1>
+                            <span class="smalltext">Hours</span>
+                        </div>
+                        <div class="col clockinner clockinner1">
+                            <h1 class="minutes">47</h1>
+                            <span class="smalltext">Mins</span>
+                        </div>
+                        <div class="col clockinner clockinner1">
+                            <h1 class="seconds">59</h1>
+                            <span class="smalltext">Secs</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 offset-lg-1">
+                    <div class="register_form">
+                        <h3>Register</h3>
+                        <p>It is high time for learning</p>
+                        <form class="form_area" id="myForm" action="mail.html" method="post">
+                            <div class="row">
+                                <div class="col-lg-12 form_group">
+                                    <input name="name" placeholder="Name" required="" type="text" />
+
+                                    <input name="email" placeholder="Email"
+                                        pattern="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{1,63}$" required=""
+                                        type="email" />
+                                    <input name="password" placeholder="Password"
+                                        pattern="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{1,63}$" required=""
+                                        type="password" />
+                                    <input name="confirm-password" placeholder="Confirm Password"
+                                        pattern="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{1,63}$" required=""
+                                        type="password" />
+                                </div>
+                                <div class="col-lg-12 text-center">
+                                    <button class="primary-btn">Submit</button>
+                                </div>
+                                <div class="col-lg-12 text-right mt-2">
+                                    <h5><a href="">Login now!</a></h5>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--================ End Registration Area =================-->
+
+    <!--================ Start Trainers Area =================-->
+    <section class="trainer_area section_gap_top">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-5">
+                    <div class="main_title">
+                        <h2 class="mb-3">Our Expert Examine</h2>
+                        <!-- <p>
+                  Replenish man have thing gathering lights yielding shall you
+                </p> -->
+                    </div>
+                </div>
+            </div>
+            <div class="row justify-content-center d-flex align-items-center">
+                <div class="col-lg-3 col-md-6 col-sm-12 single-trainer">
+                    <div class="thumb d-flex justify-content-sm-center">
+                        <img class="img-fluid" src="{{ asset('ui/frontend/assets') }}/img/trainer/t1.jpg"
+                            alt="" />
+                    </div>
+                    <div class="meta-text text-sm-center">
+                        <h4>Mated Nithan</h4>
+                        <p class="designation">Sr. web designer</p>
+
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 col-sm-12 single-trainer">
+                    <div class="thumb d-flex justify-content-sm-center">
+                        <img class="img-fluid" src="{{ asset('ui/frontend/assets') }}/img/trainer/t2.jpg"
+                            alt="" />
+                    </div>
+                    <div class="meta-text text-sm-center">
+                        <h4>David Cameron</h4>
+                        <p class="designation">Sr. web designer</p>
+
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 col-sm-12 single-trainer">
+                    <div class="thumb d-flex justify-content-sm-center">
+                        <img class="img-fluid" src="{{ asset('ui/frontend/assets') }}/img/trainer/t3.jpg"
+                            alt="" />
+                    </div>
+                    <div class="meta-text text-sm-center">
+                        <h4>Jain Redmel</h4>
+                        <p class="designation">Sr. Faculty Data Science</p>
+
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 col-sm-12 single-trainer">
+                    <div class="thumb d-flex justify-content-sm-center">
+                        <img class="img-fluid" src="{{ asset('ui/frontend/assets') }}/img/trainer/t4.jpg"
+                            alt="" />
+                    </div>
+                    <div class="meta-text text-sm-center">
+                        <h4>Nathan Macken</h4>
+                        <p class="designation">Sr. web designer</p>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--================ End Trainers Area =================-->
+
+
+    <!--================ Start Testimonial Area =================-->
+    <div class="testimonial_area ">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-5">
+                    <div class="main_title">
+                        <h2 class="mb-3">Students say about us</h2>
+                        <!-- <p>
+                  Replenish man have thing gathering lights yielding shall you
+                </p> -->
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="testi_slider owl-carousel">
+                    <div class="testi_item">
+                        <div class="row">
+                            <div class="col-lg-4 col-md-6">
+                                <img src="img/testimonials/t1.jpg" alt="" />
+                            </div>
+                            <div class="col-lg-8">
+                                <div class="testi_text">
+                                    <h4>Elite Martin</h4>
+                                    <p>
+                                        Him, made can't called over won't there on divide there
+                                        male fish beast own his day third seed sixth seas unto.
+                                        Saw from
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testi_item">
+                        <div class="row">
+                            <div class="col-lg-4 col-md-6">
+                                <img src="{{ asset('ui/frontend/assets') }}/img/testimonials/t2.jpg" alt="" />
+                            </div>
+                            <div class="col-lg-8">
+                                <div class="testi_text">
+                                    <h4>Davil Saden</h4>
+                                    <p>
+                                        Him, made can't called over won't there on divide there
+                                        male fish beast own his day third seed sixth seas unto.
+                                        Saw from
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testi_item">
+                        <div class="row">
+                            <div class="col-lg-4 col-md-6">
+                                <img src="{{ asset('ui/frontend/assets') }}/img/testimonials/t1.jpg" alt="" />
+                            </div>
+                            <div class="col-lg-8">
+                                <div class="testi_text">
+                                    <h4>Elite Martin</h4>
+                                    <p>
+                                        Him, made can't called over won't there on divide there
+                                        male fish beast own his day third seed sixth seas unto.
+                                        Saw from
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testi_item">
+                        <div class="row">
+                            <div class="col-lg-4 col-md-6">
+                                <img src="{{ asset('ui/frontend/assets') }}/img/testimonials/t2.jpg" alt="" />
+                            </div>
+                            <div class="col-lg-8">
+                                <div class="testi_text">
+                                    <h4>Davil Saden</h4>
+                                    <p>
+                                        Him, made can't called over won't there on divide there
+                                        male fish beast own his day third seed sixth seas unto.
+                                        Saw from
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testi_item">
+                        <div class="row">
+                            <div class="col-lg-4 col-md-6">
+                                <img src="{{ asset('ui/frontend/assets') }}/img/testimonials/t1.jpg" alt="" />
+                            </div>
+                            <div class="col-lg-8">
+                                <div class="testi_text">
+                                    <h4>Elite Martin</h4>
+                                    <p>
+                                        Him, made can't called over won't there on divide there
+                                        male fish beast own his day third seed sixth seas unto.
+                                        Saw from
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testi_item">
+                        <div class="row">
+                            <div class="col-lg-4 col-md-6">
+                                <img src="{{ asset('ui/frontend/assets') }}/img/testimonials/t2.jpg" alt="" />
+                            </div>
+                            <div class="col-lg-8">
+                                <div class="testi_text">
+                                    <h4>Davil Saden</h4>
+                                    <p>
+                                        Him, made can't called over won't there on divide there
+                                        male fish beast own his day third seed sixth seas unto.
+                                        Saw from
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--================ End Testimonial Area =================-->
 @endsection
