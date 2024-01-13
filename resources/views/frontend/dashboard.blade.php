@@ -33,9 +33,7 @@
                 <div class="col-lg-5">
                     <div class="main_title">
                         <h2 class="mb-3">Awesome Feature</h2>
-                        <!-- <p>
-                  Replenish man have thing gathering lights yielding shall you
-                </p> -->
+
                     </div>
                 </div>
             </div>
@@ -90,47 +88,35 @@
                 <div class="col-lg-5">
                     <div class="main_title">
                         <h2 class="mb-3">Our Popular Courses</h2>
-                        <!-- <p>
-                  Replenish man have thing gathering lights yielding shall you
-                </p> -->
+
                     </div>
                 </div>
             </div>
             <div class="row">
                 <!-- single course -->
-                <div class="col-lg-12">
-                    <div class="owl-carousel active_course">
+                <div class="col-lg-4">
+                    <div class="">
                         <div class="single_course">
                             <div class="course_head">
                                 <img class="img-fluid" src="{{ asset('ui/frontend/assets') }}/img/courses/c1.jpg"
                                     alt="" />
                             </div>
-                            <div class="course_content">
-
-                                <h4 class="mb-3">
-                                    <a href="course-details.html">Custom Product Design</a>
-                                </h4>
-                                <p>
-                                    One make creepeth man bearing their one firmament won't fowl
-                                    meat over sea
-                                </p>
-                                <!-- <div
-                      class="course_meta d-flex justify-content-lg-between align-items-lg-center flex-lg-row flex-column mt-4">
-                      <div class="authr_meta">
-                        <img src="img/courses/author1.png" alt="" />
-                        <span class="d-inline-block ml-2">Cameron</span>
-                      </div>
-                      <div class="mt-lg-0 mt-3">
-                        <span class="meta_info mr-4">
-                          <a href="#"> <i class="ti-user mr-2"></i>25 </a>
-                        </span>
-                        <span class="meta_info"><a href="#"> <i class="ti-heart mr-2"></i>35 </a></span>
-                      </div>
-                    </div> -->
-                            </div>
+                            @foreach ($subjects as $key => $subject)
+                                <a href="{{ route('examlist', $subject->id) }}" class="text-decoration-none ">
+                                    <div class="course_content">
+                                        <h4 class="mb-3">
+                                            <a href="course-details.html">{{ $key + 1 }}.
+                                                {{ $subject->name ?? '' }}</a>
+                                        </h4>
+                                        <p>
+                                            Explore {{ $subject->name ?? '' }}
+                                        </p>
+                                    </div>
+                                </a>
+                            @endforeach
                         </div>
 
-                        <div class="single_course">
+                        {{-- <div class="single_course">
                             <div class="course_head">
                                 <img class="img-fluid" src="{{ asset('ui/frontend/assets') }}/img/courses/c2.jpg"
                                     alt="" />
@@ -144,19 +130,7 @@
                                     One make creepeth man bearing their one firmament won't fowl
                                     meat over sea
                                 </p>
-                                <!-- <div
-                      class="course_meta d-flex justify-content-lg-between align-items-lg-center flex-lg-row flex-column mt-4">
-                      <div class="authr_meta">
-                        <img src="img/courses/author2.png" alt="" />
-                        <span class="d-inline-block ml-2">Cameron</span>
-                      </div>
-                      <div class="mt-lg-0 mt-3">
-                        <span class="meta_info mr-4">
-                          <a href="#"> <i class="ti-user mr-2"></i>25 </a>
-                        </span>
-                        <span class="meta_info"><a href="#"> <i class="ti-heart mr-2"></i>35 </a></span>
-                      </div>
-                    </div> -->
+
                             </div>
                         </div>
 
@@ -174,21 +148,9 @@
                                     One make creepeth man bearing their one firmament won't fowl
                                     meat over sea
                                 </p>
-                                <!-- <div
-                      class="course_meta d-flex justify-content-lg-between align-items-lg-center flex-lg-row flex-column mt-4">
-                      <div class="authr_meta">
-                        <img src="img/courses/author3.png" alt="" />
-                        <span class="d-inline-block ml-2">Cameron</span>
-                      </div>
-                      <div class="mt-lg-0 mt-3">
-                        <span class="meta_info mr-4">
-                          <a href="#"> <i class="ti-user mr-2"></i>25 </a>
-                        </span>
-                        <span class="meta_info"><a href="#"> <i class="ti-heart mr-2"></i>35 </a></span>
-                      </div>
-                    </div> -->
+
                             </div>
-                        </div>
+                        </div> --}}
                     </div>
                 </div>
             </div>
@@ -232,26 +194,84 @@
                     <div class="register_form">
                         <h3>Register</h3>
                         <p>It is high time for learning</p>
-                        <form class="form_area" id="myForm" action="mail.html" method="post">
+
+                        {{-- <form method="POST" action="{{ route('register') }}">
+                            @csrf
+
+                            <!-- Name -->
+                            <div>
+                                <x-input-label for="name" :value="__('Name')" />
+                                <x-text-input id="name" class="block mt-1 w-full" type="text" name="name"
+                                    :value="old('name')" required autofocus autocomplete="name" />
+                                <x-input-error :messages="$errors->get('name')" class="mt-2" />
+                            </div>
+
+                            <!-- Email Address -->
+                            <div class="mt-4">
+                                <x-input-label for="email" :value="__('Email')" />
+                                <x-text-input id="email" class="block mt-1 w-full" type="email" name="email"
+                                    :value="old('email')" required autocomplete="username" />
+                                <x-input-error :messages="$errors->get('email')" class="mt-2" />
+                            </div>
+
+                            <!-- Password -->
+                            <div class="mt-4">
+                                <x-input-label for="password" :value="__('Password')" />
+
+                                <x-text-input id="password" class="block mt-1 w-full" type="password" name="password"
+                                    required autocomplete="new-password" />
+
+                                <x-input-error :messages="$errors->get('password')" class="mt-2" />
+                            </div>
+
+                            <!-- Confirm Password -->
+                            <div class="mt-4">
+                                <x-input-label for="password_confirmation" :value="__('Confirm Password')" />
+
+                                <x-text-input id="password_confirmation" class="block mt-1 w-full" type="password"
+                                    name="password_confirmation" required autocomplete="new-password" />
+
+                                <x-input-error :messages="$errors->get('password_confirmation')" class="mt-2" />
+                            </div>
+
+                            <div class="flex items-center justify-end mt-4">
+                                <a class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                                    href="{{ route('login') }}">
+                                    {{ __('Already registered?') }}
+                                </a>
+
+                                <x-primary-button class="ml-4">
+                                    {{ __('Register') }}
+                                </x-primary-button>
+                            </div>
+                        </form> --}}
+
+
+                        <form class="form_area" id="myForm" action="{{ route('register') }}" method="post">
+                            @csrf
                             <div class="row">
                                 <div class="col-lg-12 form_group">
-                                    <input name="name" placeholder="Name" required="" type="text" />
+                                    <input name="name" value="{{ old('name') }}" placeholder="Name" required=""
+                                        type="text" />
 
-                                    <input name="email" placeholder="Email"
+                                    <input name="email" value="{{ old('email') }}" placeholder="Email"
                                         pattern="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{1,63}$" required=""
                                         type="email" />
-                                    <input name="password" placeholder="Password"
-                                        pattern="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{1,63}$" required=""
-                                        type="password" />
-                                    <input name="confirm-password" placeholder="Confirm Password"
-                                        pattern="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{1,63}$" required=""
-                                        type="password" />
+                                    <input name="password" value="{{ old('password') }}" placeholder="Password"
+                                        pattern="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{1,63}$" required
+                                        autocomplete="new-password" type="password" />
+                                    <input name="password_confirmation" value="{{ old('password_confirmation') }}"
+                                        placeholder="Confirm Password"
+                                        pattern="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{1,63}$" required
+                                        autocomplete="new-password" type="password" />
                                 </div>
                                 <div class="col-lg-12 text-center">
-                                    <button class="primary-btn">Submit</button>
+                                    <a href="{{ route('register') }}">
+                                        <button class="primary-btn">Register</button>
+                                    </a>
                                 </div>
                                 <div class="col-lg-12 text-right mt-2">
-                                    <h5><a href="">Login now!</a></h5>
+                                    <h5><a href="{{ route('login') }}">Login now!</a></h5>
                                 </div>
                             </div>
                         </form>
@@ -269,9 +289,7 @@
                 <div class="col-lg-5">
                     <div class="main_title">
                         <h2 class="mb-3">Our Expert Examine</h2>
-                        <!-- <p>
-                  Replenish man have thing gathering lights yielding shall you
-                </p> -->
+
                     </div>
                 </div>
             </div>
@@ -336,9 +354,7 @@
                 <div class="col-lg-5">
                     <div class="main_title">
                         <h2 class="mb-3">Students say about us</h2>
-                        <!-- <p>
-                  Replenish man have thing gathering lights yielding shall you
-                </p> -->
+
                     </div>
                 </div>
             </div>

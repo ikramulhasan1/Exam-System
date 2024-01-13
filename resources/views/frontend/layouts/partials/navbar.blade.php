@@ -13,10 +13,11 @@
         <nav class="navbar navbar-expand-lg navbar-light">
             <div class="container">
                 <!-- Brand and toggle get grouped for better mobile display -->
-                <a class="navbar-brand logo_h" href="index.html">
+                <a class="navbar-brand logo_h" href="{{ route('dashboard') }}">
                     <h2><span class="logo">virtual</span><span class="logoSub">Exam</span></h2>
                     <!-- <img src="img/logo.png" alt="" /> -->
                 </a>
+
                 <button class="navbar-toggler" type="button" data-toggle="collapse"
                     data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                     aria-label="Toggle navigation">
@@ -56,7 +57,22 @@
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link" href="contact.html">SignIn</a>
+                            {{-- <form method="post" action="{{ route('login') }}">
+                                @csrf --}}
+
+                            <a class="nav-link" href="{{ route('login') }}">
+                                @if (Auth::user())
+                                    @php
+                                        echo 'My Account';
+                                    @endphp
+                                @else
+                                    @php
+                                        echo 'SignIn';
+                                    @endphp
+                                @endif
+                                {{-- <button class="bg-transparent border-0 nav-link" type="submit">SignIn</button> --}}
+                            </a>
+                            {{-- </form> --}}
                         </li>
                         <li class="nav-item">
                             <a href="#" class="nav-link search" id="search">

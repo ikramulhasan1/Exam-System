@@ -1,7 +1,7 @@
 <div class="navbar navbar-expand-md navbar-dark">
     <div class="navbar-brand">
         <a href="{{ route('index') }}" class="d-inline-block text-white">
-            <h3 class="m-0">QuickTest</h3>
+            <h3 class="m-0">virtualExam</h3>
         </a>
     </div>
 
