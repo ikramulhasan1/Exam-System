@@ -13,8 +13,10 @@ The Virtual Exam System is a web-based application designed to streamline and en
 <!-- Add any relevant screenshots, images, or GIFs -->
 
 ## Screenshots
-
+### Frontend top Section
 ![Alt text](https://pbs.twimg.com/media/GD09LokboAAbqJC?format=jpg&name=900x900)
+
+### Backend Dashboard Section
 ![Alt text](https://pbs.twimg.com/media/GD06xrWaAAAsfUd?format=jpg&name=900x900)
 
 ## Features
@@ -56,3 +58,24 @@ The Virtual Exam System is a web-based application designed to streamline and en
 1. Clone the repository:
    ```bash
    git clone https://github.com/yourusername/virtual-exam-system.git
+
+2. Install dependencies:
+   ```bash
+   cd virtual-exam-system
+   ```bash
+   composer install
+   ```bash
+   npm install
+
+3. Set up the database:
+   ```bash
+   mv .env.example .env
+   ```bash
+   php artisan key:generate
+   ```bash
+   php artisan migrate
+
+4. Run the development server:
+   ```bash
+   php artisan serve
+   
