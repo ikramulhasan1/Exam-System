@@ -15,7 +15,7 @@ The Virtual Exam System is a web-based application designed to streamline and en
 ## Screenshots
 
 ![Screenshot 1](screenshots/screenshot1.png)
-![Alt text](http://tinyurl.com/yl6ygzd6)
+![Alt text](https://pbs.twimg.com/media/GD06xrWaAAAsfUd?format=jpg&name=900x900)
 
 ## Features
 
