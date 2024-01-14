@@ -62,11 +62,7 @@ The Virtual Exam System is a web-based application designed to streamline and en
 2. Install dependencies:
    ```bash
    cd virtual-exam-system
-
-   ```bash
    composer install
-
-   ```bash
    npm install
 
 3. Set up the database:
