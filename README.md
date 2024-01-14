@@ -1,53 +1,58 @@
-# Laravel 10 Exam System
+# Virtual Exam System
 
-<div>
-  <img src="./public/ui/Full-Project-Image/COVER.png" alt="QuickTest" width="100%">
-</div>
+[![License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+[![GitHub Issues](https://img.shields.io/github/issues/yourusername/virtual-exam-system)](https://github.com/yourusername/virtual-exam-system/issues)
+[![GitHub Pull Requests](https://img.shields.io/github/issues-pr/yourusername/virtual-exam-system)](https://github.com/yourusername/virtual-exam-system/pulls)
 
+<!-- Add a brief project description and an optional logo -->
 
-### Project Overview:
-The Laravel 10 Exam System is a web-based application designed to manage and conduct exams. It includes features such as user authentication, exam creation, exam scheduling, exam-taking, and result management. The system provides a seamless experience for both exam administrators and exam takers.
+## Overview
 
-### Key Features:
-**1. User Authentication and Authorization:**
-   - User registration and login with appropriate access levels (e.g., admin, teacher, student).
+The Virtual Exam System is a web-based application designed to streamline and enhance the examination process within our university. It provides a platform for administrators, instructors, and students to manage exams, answer questions, and assess performance.
 
-**2. Exam Creation and Management:**
-   - Create exams with multiple-choice questions, essay questions, etc.
-   - Set time limits, exam instructions, and passing criteria.
+<!-- Add any relevant screenshots, images, or GIFs -->
 
-**3. Exam Scheduling:**
-   - Schedule exams for specific dates and times.
-   - Assign exams to classes or groups.
+## Screenshots
 
-**4. Exam Taking:**
-   - Allow students to take exams online within the scheduled time.
-   - Restrict access to the exam before and after the scheduled time.
+![Screenshot 1](screenshots/screenshot1.png)
+![Screenshot 2](screenshots/screenshot2.png)
 
-**5. Result Management:**
-   - Automatically grade multiple-choice questions.
-   - Provide manual grading for essay questions.
-   - Generate exam reports and provide feedback to students.
+## Features
 
+- **User Management:**
+  - Register, authenticate, and manage users (administrators, instructors, students).
 
-### Setup and Usage:
+- **Exam Creation and Management:**
+  - Create and schedule exams with diverse question types.
+  - Build and maintain a question bank.
+
+- **Exam Delivery:**
+  - User-friendly interface for taking exams.
+  - Security measures to prevent unauthorized access.
+
+- **Grading and Reporting:**
+  - Automated grading for objective questions.
+  - Comprehensive reports on exam performance.
+
+## Technologies Used
+
+- **Backend:** PHP, Laravel
+- **Frontend:** HTML, CSS, JavaScript (Vue.js)
+- **Database:** MySQL
+- **Testing:** PHPUnit, Laravel Dusk
+- **Version Control:** Git, GitHub
+
+## Getting Started
+
+### Prerequisites
+
+- PHP (7.4 or later)
+- Composer
+- Node.js
+- MySQL
+
+### Installation
+
 1. Clone the repository:
-   ```
-   git clone https://github.com/ikramulhasan1/Exam-System.git
-   ```
-
-## users continue here:
-
--   Create a database locally named `examsystem`
--   Rename `.env.example` file to `.env`inside your project root and fill the database information, or run `mv .env.example .env` 
--   Open the console and cd your project root directory
--   Run `composer install` or `composer update`
--   Run `php artisan key:generate`
--   Run `php artisan migrate`
--   Run `php artisan serve`
-
-##### You can now access your project at http://127.0.0.1:8000/ :
-
-## If for some reason your project stop working do these:
-
--   `composer install`
+   ```bash
+   git clone https://github.com/yourusername/virtual-exam-system.git
