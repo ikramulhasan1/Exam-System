@@ -1,7 +1,7 @@
 # Virtual Exam System
 
-[![License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
-[![GitHub Issues](https://img.shields.io/github/issues/ikramulhasan1/virtual-exam-system)](https://github.com/ikramulhasan1/Exam-System.git)
+<!---[![License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)-->
+<!---[![GitHub Issues](https://img.shields.io/github/issues/ikramulhasan1/virtual-exam-system)](https://github.com/ikramulhasan1/Exam-System.git)-->
 <!---[![GitHub Pull Requests](https://img.shields.io/github/issues-pr/yourusername/virtual-exam-system)](https://github.com/yourusername/virtual-exam-system/pulls)-->
 
 
