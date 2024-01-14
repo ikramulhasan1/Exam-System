@@ -68,9 +68,7 @@ The Virtual Exam System is a web-based application designed to streamline and en
 3. Set up the database:
    ```bash
    mv .env.example .env
-   ```bash
    php artisan key:generate
-   ```bash
    php artisan migrate
 
 4. Run the development server:
