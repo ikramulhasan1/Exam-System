@@ -40,6 +40,10 @@ Route::get('questionpaper/{id}', [FrontendController::class, 'questionPaper'])->
 
 Route::post('submit-paper', [FrontendController::class, 'submitQuestionPaper'])->middleware(['auth', 'verified'])->name('submitted_question_paper');
 
+Route::get('about-us', [FrontendController::class, 'about'])->name('frontend.about');
+Route::get('courses', [FrontendController::class, 'courses'])->name('frontend.courses');
+Route::get('contact', [FrontendController::class, 'contact'])->name('frontend.contact');
+
 
 Route::get('/setting', function () {
     return view('backend.profile.profileSetting');

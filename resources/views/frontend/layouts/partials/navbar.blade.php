@@ -13,7 +13,7 @@
         <nav class="navbar navbar-expand-lg navbar-light">
             <div class="container">
                 <!-- Brand and toggle get grouped for better mobile display -->
-                <a class="navbar-brand logo_h" href="{{ route('dashboard') }}">
+                <a class="navbar-brand logo_h" href="{{ route('index') }}">
                     <h2><span class="logo">virtual</span><span class="logoSub">Exam</span></h2>
                     <!-- <img src="img/logo.png" alt="" /> -->
                 </a>
@@ -28,21 +28,19 @@
                 <div class="collapse navbar-collapse offset" id="navbarSupportedContent">
                     <ul class="nav navbar-nav menu_nav ml-auto">
                         <li class="nav-item active">
-                            <a class="nav-link" href="index.html">Home</a>
+                            <a class="nav-link" href="{{ route('index') }}">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="about-us.html">About</a>
+                            <a class="nav-link" href="{{ route('frontend.about') }}">About</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="courses.html">Courses</a>
+                            <a class="nav-link" href="{{ route('frontend.courses') }}">Courses</a>
                         </li>
                         <li class="nav-item submenu dropdown">
                             <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button"
                                 aria-haspopup="true" aria-expanded="false">Pages</a>
                             <ul class="dropdown-menu">
-                                <li class="nav-item">
-                                    <a class="nav-link" href="courses.html">Courses</a>
-                                </li>
+
                                 <li class="nav-item">
                                     <a class="nav-link" href="course-details.html">Course Details</a>
                                 </li>
@@ -53,13 +51,10 @@
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link" href="contact.html">Contact</a>
+                            <a class="nav-link" href="{{ route('frontend.contact') }}">Contact</a>
                         </li>
 
                         <li class="nav-item">
-                            {{-- <form method="post" action="{{ route('login') }}">
-                                @csrf --}}
-
                             <a class="nav-link" href="{{ route('login') }}">
                                 @if (Auth::user())
                                     @php
@@ -70,9 +65,7 @@
                                         echo 'SignIn';
                                     @endphp
                                 @endif
-                                {{-- <button class="bg-transparent border-0 nav-link" type="submit">SignIn</button> --}}
                             </a>
-                            {{-- </form> --}}
                         </li>
                         <li class="nav-item">
                             <a href="#" class="nav-link search" id="search">

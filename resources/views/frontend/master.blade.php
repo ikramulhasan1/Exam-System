@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <link rel="icon" href="{{ asset('ui/frontend/assets') }}/img/favicon.png" type="image/png" />
-    <title>Edustage Education</title>
+    <title>virtualExam</title>
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="{{ asset('ui/frontend/assets') }}/css/bootstrap.css" />
     <link rel="stylesheet" href="{{ asset('ui/frontend/assets') }}/css/flaticon.css" />
