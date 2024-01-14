@@ -12,7 +12,7 @@
                                 Best online education service In the world
                             </p>
                             <h2 class="text-uppercase mt-4 mb-5">
-                                One Step Ahead This Season
+                                All-In-One Tests & Examination
                             </h2>
                             <div>
                                 <a href="#" class="primary-btn2 mb-3 mb-sm-0">learn more</a>

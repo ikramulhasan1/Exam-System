@@ -36,19 +36,6 @@
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('frontend.courses') }}">Courses</a>
                         </li>
-                        <li class="nav-item submenu dropdown">
-                            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button"
-                                aria-haspopup="true" aria-expanded="false">Pages</a>
-                            <ul class="dropdown-menu">
-
-                                <li class="nav-item">
-                                    <a class="nav-link" href="course-details.html">Course Details</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="elements.html">Elements</a>
-                                </li>
-                            </ul>
-                        </li>
 
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('frontend.contact') }}">Contact</a>
@@ -58,11 +45,11 @@
                             <a class="nav-link" href="{{ route('login') }}">
                                 @if (Auth::user())
                                     @php
-                                        echo 'My Account';
+                                        echo 'My Account <i class="fa-regular fa-user"></i>';
                                     @endphp
                                 @else
                                     @php
-                                        echo 'SignIn';
+                                        echo 'SignIn <i class="fa-solid fa-right-to-bracket"></i>';
                                     @endphp
                                 @endif
                             </a>

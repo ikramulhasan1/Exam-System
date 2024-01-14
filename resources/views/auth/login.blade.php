@@ -33,7 +33,7 @@
 
                 </label>
                 <label for="remember_me" class="inline-flex items-end ">
-                    <a class="items-end text-base text-blue-500 hover:text-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-600"
+                    <a class="items-end text-base text-blue-500 hover:text-blue-700 focus:ring-2 focus:ring-offset-2 focus:ring-indigo-600"
                         href="{{ route('register') }}">Registration Now!</a>
                 </label>
             </div>

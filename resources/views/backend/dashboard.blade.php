@@ -16,7 +16,7 @@
                         <div class=" bg-teal-400">
                             <div class="card-body">
                                 <div class="d-flex">
-                                    <h3 class="font-weight-semibold mb-0">49.4%</h3>
+                                    <h3 class="font-weight-semibold mb-0">34</h3>
                                     <div class="list-icons ml-auto">
                                         <div class="dropdown">
                                             <a href="#" class="list-icons-item dropdown-toggle"
@@ -36,8 +36,8 @@
                                 </div>
 
                                 <div>
-                                    Current server load
-                                    <div class="font-size-sm opacity-75">34.6% avg</div>
+                                    Total Studens account
+                                    {{-- <div class="font-size-sm opacity-75">34.6% avg</div> --}}
                                 </div>
                             </div>
 
@@ -51,7 +51,7 @@
                         <div class=" bg-pink-400">
                             <div class="card-body">
                                 <div class="d-flex">
-                                    <h3 class="font-weight-semibold mb-0">49.4%</h3>
+                                    <h3 class="font-weight-semibold mb-0">07</h3>
                                     <div class="list-icons ml-auto">
                                         <div class="dropdown">
                                             <a href="#" class="list-icons-item dropdown-toggle"
@@ -71,8 +71,8 @@
                                 </div>
 
                                 <div>
-                                    Current server load
-                                    <div class="font-size-sm opacity-75">34.6% avg</div>
+                                    Total Subjects created
+                                    {{-- <div class="font-size-sm opacity-75">34.6% avg</div> --}}
                                 </div>
                             </div>
 
@@ -88,7 +88,7 @@
                         <div class=" bg-blue-400">
                             <div class="card-body">
                                 <div class="d-flex">
-                                    <h3 class="font-weight-semibold mb-0">49.4%</h3>
+                                    <h3 class="font-weight-semibold mb-0">26</h3>
                                     <div class="list-icons ml-auto">
                                         <div class="dropdown">
                                             <a href="#" class="list-icons-item dropdown-toggle"
@@ -108,8 +108,8 @@
                                 </div>
 
                                 <div>
-                                    Current server load
-                                    <div class="font-size-sm opacity-75">34.6% avg</div>
+                                    Total Exam complited
+                                    {{-- <div class="font-size-sm opacity-75">34.6% avg</div> --}}
                                 </div>
                             </div>
 

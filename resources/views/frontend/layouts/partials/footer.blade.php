@@ -7,26 +7,30 @@
                             class="">Exam</span></h2>
                     <!-- <img src="img/logo.png" alt="" /> -->
                 </a>
+
             </div>
             <div class="col-lg-2 col-md-6 single-footer-widget">
                 <h4>Quick Links</h4>
                 <ul>
-                    <li><a href="about-us.html">About us</a></li>
-                    <li><a href="courses.html">Courses</a></li>
-                    <li><a href="contact.html">Contact</a></li>
+                    {{-- <li><a href="{{ route('index') }}">Home</a></li> --}}
+                    <li><a href="{{ route('frontend.about') }}">About us</a></li>
+                    <li><a href="{{ route('frontend.courses') }}">Courses</a></li>
+                    <li><a href="{{ route('frontend.contact') }}">Contact</a></li>
                 </ul>
             </div>
             <div class="col-lg-2 col-md-6 single-footer-widget">
                 <h4>Features</h4>
                 <ul>
-                    <li><a href="#">Jobs</a></li>
+                    <li><a href="#">FAQs</a></li>
+                    <li><a href="#">Terms of Service</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
 
                 </ul>
             </div>
 
             <div class="col-lg-4 col-md-6 single-footer-widget">
                 <h4>Newsletter</h4>
-                <p>You can trust us. we only send promo offers,</p>
+                {{-- <p>You can trust us. we only send promo offers,</p> --}}
                 <div class="form-wrap" id="mc_embed_signup">
                     <form target="_blank"
                         action="https://spondonit.us12.list-manage.com/subscribe/post?u=1462626880ade1ac87bd9c93a&amp;id=92a4423d01"
@@ -47,8 +51,8 @@
                 </div>
             </div>
         </div>
-        <div class="row footer-bottom d-flex justify-content-between">
-            <p class="col-lg-8 col-sm-12 footer-text m-0 text-white">
+        <div class="row footer-bottom d-flex justify-content-between m-0">
+            <p class="col-lg-8 col-sm-12 footer-text m-0 p-0 text-white">
                 <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
                 Copyright &copy;
                 <script>

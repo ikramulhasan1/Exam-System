@@ -244,7 +244,7 @@
                 <div class="dropdown-menu dropdown-menu-right">
                     <a href="{{ route('profile.edit') }}" class="dropdown-item"><i class="icon-user-plus"></i> My
                         profile</a>
-                    <a href="#" class="dropdown-item"><i class="icon-coins"></i> My balance</a>
+                    {{-- <a href="#" class="dropdown-item"><i class="icon-coins"></i> My balance</a> --}}
                     <a href="#" class="dropdown-item"><i class="icon-comment-discussion"></i> Messages
                         <span class="badge badge-pill bg-blue ml-auto">58</span></a>
                     <div class="dropdown-divider"></div>
